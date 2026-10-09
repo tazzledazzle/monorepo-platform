@@ -1,0 +1,11 @@
+region,product,units,revenue
+east,widget,10,100.5
+west,widget,5,50.25
+east,gadget,7,70
+north,gadget,3,33.3
+west,gadget,4,40
+north,widget,6,60.75
+south,widget,8,80
+east,gizmo,2,25.25
+south,gizmo,9,90.5
+west,gizmo,1,12

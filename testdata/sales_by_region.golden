@@ -1,0 +1,6 @@
+region      sum(revenue)
+--------  --------------
+east              195.75
+north              94.05
+south              170.5
+west              102.25

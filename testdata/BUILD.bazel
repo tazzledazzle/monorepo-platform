@@ -1,0 +1,7 @@
+exports_files(
+    [
+        "sales.csv",
+        "sales_by_region.golden",
+    ],
+    visibility = ["//release:__pkg__"],
+)

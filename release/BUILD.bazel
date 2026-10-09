@@ -1,0 +1,49 @@
+load("@rules_java//java:java_binary.bzl", "java_binary")
+load("@rules_python//python:py_test.bzl", "py_test")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+load("//tools/build_defs:package.bzl", "analytics_package")
+
+# kt_jvm_binary (rules_kotlin) has no `<name>_deploy.jar` output, so the self-contained
+# gateway jar comes from a java_binary over the gateway library (same main class).
+java_binary(
+    name = "gateway",
+    main_class = "analytics.gateway.MainKt",
+    runtime_deps = ["//server/gateway:gateway_lib"],
+)
+
+# The four product binaries are visible to this package only.
+analytics_package(
+    name = "analytics",
+    components = {
+        "//engine/service:engine": "engine",
+        ":gateway_deploy.jar": "gateway",
+        "//ingest/agent/main:agent": "agent",
+        "//reports/cli:cli": "cli",
+    },
+)
+
+# End to end: engine + gateway on ephemeral loopback ports, agent ingest, CLI report vs golden.
+sh_test(
+    name = "smoke_test",
+    size = "medium",
+    srcs = ["smoke_test.sh"],
+    data = [
+        "//engine/service:engine",
+        "//ingest/agent/main:agent",
+        "//reports/cli:cli",
+        "//server/gateway:gateway",
+        "//testdata:sales.csv",
+        "//testdata:sales_by_region.golden",
+    ],
+    deps = ["@rules_shell//shell/runfiles"],
+)
+
+# Unpacks analytics.tar, checks every MANIFEST.json sha256 and the expected executables.
+py_test(
+    name = "package_test",
+    size = "small",
+    srcs = ["package_test.py"],
+    args = ["$(rootpaths :analytics)"],  # analytics.tar and analytics.MANIFEST.json
+    data = [":analytics"],
+    main = "package_test.py",
+)
