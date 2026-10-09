@@ -1,18 +1,62 @@
-# MODULE.bazel
+# MODULE.bazel — every external dependency for the monorepo is pinned here.
+# Versions below were validated together by the M1 codegen spike (tlow-a6j.10.1).
 module(name = "three_languages_one_workspace")
 
-# Must precede rules_cc: registers the Xcode-aware C++ toolchain on macOS, which
-# knows about SDK files (e.g. SDKSettings.json) that newer Apple clang reports.
+# apple_support must precede rules_cc: it registers the Xcode-aware C++ toolchain on
+# macOS, which knows about SDK files (e.g. SDKSettings.json) newer Apple clang reports.
 bazel_dep(name = "apple_support", version = "2.10.0", repo_name = "build_bazel_apple_support")
-bazel_dep(name = "rules_cc", version = "0.2.22")
+bazel_dep(name = "rules_cc", version = "0.2.26")
 bazel_dep(name = "rules_java", version = "9.9.0")
-bazel_dep(name = "rules_go", version = "0.64.2")        # Go rules
-bazel_dep(name = "gazelle", version = "0.54.0")         # the BUILD-file generator
-bazel_dep(name = "rules_jvm_external", version = "6.9") # Maven artifacts (JUnit for java_test)
+bazel_dep(name = "rules_kotlin", version = "2.4.20")
+bazel_dep(name = "rules_go", version = "0.64.2")
+bazel_dep(name = "gazelle", version = "0.54.0")  # BUILD-file generator for Go
+bazel_dep(name = "rules_python", version = "2.4.1")
+bazel_dep(name = "rules_shell", version = "0.8.0")
+bazel_dep(name = "bazel_skylib", version = "1.9.2")
+bazel_dep(name = "googletest", version = "1.18.0.bcr.1")
+
+# Proto + gRPC codegen
+bazel_dep(name = "protobuf", version = "36.2")
+bazel_dep(name = "grpc", version = "1.84.0")
+bazel_dep(name = "grpc-java", version = "1.84.0")
+
+# ---- Java/Kotlin: Maven ----
+bazel_dep(name = "rules_jvm_external", version = "7.1")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
-    artifacts = ["junit:junit:4.13.2"],
+    artifacts = [
+        "junit:junit:4.13.2",
+        # grpc-java needs this but does not declare it into the shared repo (spike finding).
+        "org.codehaus.mojo:animal-sniffer-annotations:1.24",
+    ],
+    # grpc-java and protobuf both contribute to @maven; declaring them silences the
+    # layering warning and keeps resolution deterministic.
+    known_contributing_modules = [
+        "grpc-java",
+        "protobuf",
+    ],
+    lock_file = "//:maven_install.json",
     repositories = ["https://repo1.maven.org/maven2"],
 )
 use_repo(maven, "maven")
+
+# ---- Go ----
+go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
+go_deps.from_file(go_mod = "//:go.mod")
+use_repo(go_deps, "org_golang_google_grpc", "org_golang_google_protobuf")
+
+# ---- Python ----
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    is_default = True,
+    python_version = "3.12",
+)
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "pip",
+    python_version = "3.12",
+    requirements_lock = "//:requirements_lock.txt",
+)
+use_repo(pip, "pip")
