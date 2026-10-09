@@ -278,3 +278,17 @@ Visibility errors happen while BUILD files load, before `analysistest` runs, whi
 3. `scripts/check_negative.sh` exits 0.
 4. `docs/architecture.md` (layout, graph, visibility) and `docs/adding-a-target.md` (per-language macro usage, policy split, Gazelle workflow) exist.
 5. The clean-build time in a fresh clone is recorded in `docs/architecture.md`. It's measured, not required to hit a target.
+
+## As built: deviations from this spec
+
+Recorded at M1 completion (2026-10-09). The spec above is the design; these are the differences in the code.
+
+- **`inherit_attrs`.** Only `kt_jvm_*`, `go_library` and `go_test` are real rules and inherit their attributes. rules_cc, rules_java, rules_python and `go_binary` export wrapper functions, so those macros list attributes explicitly (the fallback this spec anticipated).
+- **`team` enforcement.** `team` is not `mandatory = True`. On Bazel 9.3.0 a missing mandatory attribute of a symbolic macro prints an error but `bazel build` still exits 0, so `team_tags` in `common.bzl` checks it with `fail()`.
+- **Gateway package component.** `//server/gateway:gateway_deploy.jar` does not exist because `kt_jvm_binary` has no deploy jar. `//release:gateway_deploy.jar` is a `java_binary` over the gateway library.
+- **`analytics_proto`.** Takes `strip_import_prefix` and `importpath`. `<name>_java_grpc` is a `java_library` that re-exports the stubs, messages and dep protos (javac strict-deps). Go targets use both the `go_proto` and `go_grpc_v2` compilers. C++ stubs are built with `generate_cc` directly.
+- **Python stubs.** `.bazelrc` sets `--incompatible_default_to_explicit_init_py` so generated stubs merge as a namespace package.
+- **Ingest semantics.** A repeated `Load` appends and requires an identical schema (per `docs/proto-compatibility.md`). An unknown dataset on `Execute` returns `NOT_FOUND`.
+- **Packaging.** The same file reached twice at one install path is one entry; only different files at one path fail. The packaged Python CLI cannot run from the unpacked tarball (runfiles).
+- **Wire format.** Cell values are typed column vectors, with no per-cell `Value` message and no NULLs in v1.
+- **Not verified.** The gcc and msvc warning branches of the cc macros; any platform other than macOS arm64.
