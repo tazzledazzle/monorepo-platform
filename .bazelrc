@@ -1,0 +1,21 @@
+# .bazelrc — repo-wide flags. Policy split: toolchain/compat flags live here;
+# per-target policy (warnings, test deps, tags) lives in //tools/build_defs macros.
+
+# ---- common: apply to every command ----
+common --enable_platform_specific_config
+
+# ---- build: language levels (toolchain/compat, so they affect cache keys) ----
+build --cxxopt=-std=c++20
+build --host_cxxopt=-std=c++20
+build --java_language_version=17
+build --tool_java_language_version=17
+build --java_runtime_version=remotejdk_17
+build --tool_java_runtime_version=remotejdk_17
+
+# ---- test ----
+test --test_output=errors
+
+# ---- M2 will add: sandbox strictness, sanitizer configs, remote cache ----
+
+# Per-user overrides; never committed (see .gitignore).
+try-import %workspace%/user.bazelrc
