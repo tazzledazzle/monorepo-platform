@@ -1,0 +1,46 @@
+# Shared analytics.v1 contract. Each .proto becomes five targets (see //tools/build_defs:proto.bzl):
+#   <name>_proto, <name>_cc_grpc, <name>_java_grpc, <name>_go_grpc, <name>_py_grpc
+# Consumers depend on the one for their language; others are never built.
+load("//tools/build_defs:proto.bzl", "analytics_proto")
+
+_GO = "example.com/three_languages_one_workspace/proto/analytics/v1/"
+
+# common.proto defines no services, so its *_grpc targets carry messages only.
+analytics_proto(
+    name = "common",
+    srcs = ["common.proto"],
+    importpath = _GO + "commonpb",
+    strip_import_prefix = "/proto",
+    team = "platform",
+    visibility = ["//visibility:public"],
+)
+
+analytics_proto(
+    name = "ingest",
+    srcs = ["ingest.proto"],
+    importpath = _GO + "ingestpb",
+    strip_import_prefix = "/proto",
+    team = "platform",
+    visibility = ["//visibility:public"],
+    deps = [":common_proto"],
+)
+
+analytics_proto(
+    name = "query",
+    srcs = ["query.proto"],
+    importpath = _GO + "querypb",
+    strip_import_prefix = "/proto",
+    team = "platform",
+    visibility = ["//visibility:public"],
+    deps = [":common_proto"],
+)
+
+analytics_proto(
+    name = "catalog",
+    srcs = ["catalog.proto"],
+    importpath = _GO + "catalogpb",
+    strip_import_prefix = "/proto",
+    team = "platform",
+    visibility = ["//visibility:public"],
+    deps = [":common_proto"],
+)

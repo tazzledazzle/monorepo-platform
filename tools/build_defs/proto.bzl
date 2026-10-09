@@ -19,6 +19,9 @@ target is wired to the same dep's stubs for that language: cc/java/py stubs reac
 messages through the transitive proto aspects; Go needs an explicit edge, so `<x>_proto`
 maps to `<x>_go_grpc`. Deps must therefore be named `<x>_proto` and come from analytics_proto.
 
+Import root: pass `strip_import_prefix = "/proto"` when .proto files import each other by their proto
+package path (`analytics/v1/common.proto`) rather than their repo path.
+
 Go import path: defaults to `example.com/three_languages_one_workspace/<package path>`, matching
 go.mod, so Go code imports a contract by its repo path. Override with `importpath` only if the
 .proto's `go_package` differs.
@@ -48,12 +51,18 @@ def _sibling(dep, suffix):
         fail("analytics_proto deps must be `<x>_proto` targets, got %s" % dep)
     return dep.same_package_label(dep.name[:-len(_PROTO_SUFFIX)] + suffix)
 
-def _impl(name, visibility, team, srcs, deps, importpath, tags, **_kwargs):
+def _impl(name, visibility, team, srcs, deps, importpath, strip_import_prefix, tags, **_kwargs):
     tags = team_tags(tags, team)
     common = {"tags": tags, "visibility": visibility}
     proto = ":" + name + "_proto"
 
-    proto_library(name = name + "_proto", srcs = srcs, deps = deps, **common)
+    proto_library(
+        name = name + "_proto",
+        srcs = srcs,
+        deps = deps,
+        # Only when set: an explicit "" still makes proto_library build a virtual import tree.
+        **(common | ({"strip_import_prefix": strip_import_prefix} if strip_import_prefix else {}))
+    )
 
     # C++ (messages via cc_proto_library, services via grpc_only)
     cc_proto_library(name = name + "_cc_proto", deps = [proto], tags = tags, visibility = ["//visibility:private"])
@@ -114,6 +123,10 @@ analytics_proto = macro(
         "importpath": attr.string(
             configurable = False,
             doc = "Go import path. Defaults to example.com/three_languages_one_workspace/<package>.",
+        ),
+        "strip_import_prefix": attr.string(
+            configurable = False,
+            doc = "Proto import root, e.g. '/proto' so proto/analytics/v1/x.proto is imported as 'analytics/v1/x.proto'.",
         ),
         "tags": attr.string_list(configurable = False),
     },
