@@ -1,0 +1,14 @@
+load("//tools/build_defs:service.bzl", "analytics_grpc_service")
+
+analytics_grpc_service(
+    name = "gateway",
+    lang = "kt",
+    team = "server",
+    srcs = glob(["src/main/kotlin/**/*.kt"]),
+    main = "analytics.gateway.MainKt",
+    protos = ["//proto/analytics/v1:query"],
+    test_class = "analytics.gateway.GatewayTest",
+    test_srcs = glob(["src/test/kotlin/**/*.kt"]),
+    visibility = ["//server:__subpackages__", "//release:__subpackages__"],
+    deps = ["//server/catalog"],
+)
