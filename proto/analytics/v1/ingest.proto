@@ -1,0 +1,62 @@
+// Bulk load of rows into a named dataset (ingest agent -> engine).
+
+syntax = "proto3";
+
+package analytics.v1;
+
+import "analytics/v1/common.proto";
+
+option go_package = "example.com/three_languages_one_workspace/proto/analytics/v1/ingestpb;ingestpb";
+option java_package = "com.example.analytics.v1";
+option java_multiple_files = true;
+option java_outer_classname = "IngestProto";
+
+service IngestService {
+  // Client-streaming load.
+  //
+  // Stream shape: exactly one LoadRequest with `header` FIRST, then zero or
+  // more LoadRequests with `batch`. A first message that is not a header, a
+  // second header, or an empty message is INVALID_ARGUMENT.
+  //
+  // Semantics: rows are appended to the dataset, which is created from the
+  // header schema if it does not exist. If it exists, the header schema must
+  // equal the stored schema (names, types, order), else INVALID_ARGUMENT.
+  // The load is atomic: nothing becomes visible to queries unless the whole
+  // stream is accepted. Any error leaves the dataset unchanged.
+  //
+  // Status: INVALID_ARGUMENT for protocol violations, unknown/UNSPECIFIED
+  // column types, schema mismatch, or a batch that does not match the header
+  // schema (wrong vector count, wrong type, ragged lengths).
+  // Clients should set a deadline sized to the load; there is no server default.
+  rpc Load(stream LoadRequest) returns (LoadResponse);
+}
+
+message LoadRequest {
+  oneof payload {
+    LoadHeader header = 1;
+    RowBatch batch = 2;
+  }
+}
+
+// Must be the first message of the stream, and only the first.
+message LoadHeader {
+  // Target dataset name; non-empty.
+  string dataset = 1;
+  // Schema of every following batch.
+  Schema schema = 2;
+}
+
+// A run of rows in columnar form. `columns` has one entry per schema column,
+// in schema order; all entries have exactly `row_count` values.
+//
+// Sizing: keep a batch well under the 4 MiB default gRPC message limit.
+// Recommended: 8192 rows or about 1 MiB, whichever is smaller.
+message RowBatch {
+  uint32 row_count = 1;
+  repeated ColumnData columns = 2;
+}
+
+message LoadResponse {
+  // Total rows accepted from this stream.
+  uint64 rows_loaded = 1;
+}

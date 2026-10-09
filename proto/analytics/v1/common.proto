@@ -1,0 +1,85 @@
+// Shared types for the analytics.v1 contracts.
+//
+// Compatibility rules: docs/proto-compatibility.md. Summary: field numbers are
+// never reused, removed fields are `reserved`, changes within v1 are additive
+// only, every enum starts with an *_UNSPECIFIED = 0 value.
+
+syntax = "proto3";
+
+package analytics.v1;
+
+option go_package = "example.com/three_languages_one_workspace/proto/analytics/v1/commonpb;commonpb";
+option java_package = "com.example.analytics.v1";
+option java_multiple_files = true;
+option java_outer_classname = "CommonProto";
+
+// Type of a column. Fixes the physical representation in ColumnData.
+enum ColumnType {
+  // Never valid on the wire. Receivers reject it with INVALID_ARGUMENT.
+  COLUMN_TYPE_UNSPECIFIED = 0;
+  COLUMN_TYPE_INT64 = 1;
+  COLUMN_TYPE_DOUBLE = 2;
+  COLUMN_TYPE_STRING = 3;
+}
+
+// One named, typed column.
+message Column {
+  // Non-empty. Unique within a Schema (case-sensitive).
+  string name = 1;
+  ColumnType type = 2;
+}
+
+// Ordered list of columns. Column order is significant: ColumnData vectors in
+// a RowBatch or Table are positional and match this order.
+message Schema {
+  repeated Column columns = 1;
+}
+
+// Values of one column for a run of rows, as a typed packed vector.
+//
+// Exactly one member of `values` must be set, and it must match the column's
+// ColumnType. This is the only representation of cell values on the wire;
+// there is no per-cell Value message (see docs/proto-compatibility.md).
+// v1 has no NULLs: every row has a value in every column.
+message ColumnData {
+  oneof values {
+    Int64Vector int64_values = 1;
+    DoubleVector double_values = 2;
+    StringVector string_values = 3;
+  }
+}
+
+message Int64Vector {
+  repeated int64 values = 1;  // packed
+}
+
+message DoubleVector {
+  repeated double values = 1;  // packed
+}
+
+message StringVector {
+  repeated string values = 1;
+}
+
+// Machine-readable reason attached to non-OK statuses.
+enum ErrorReason {
+  ERROR_REASON_UNSPECIFIED = 0;
+  // INVALID_ARGUMENT
+  ERROR_REASON_UNKNOWN_COLUMN = 1;
+  ERROR_REASON_INVALID_AGGREGATION = 2;
+  ERROR_REASON_SCHEMA_MISMATCH = 3;
+  ERROR_REASON_MALFORMED_REQUEST = 4;
+  // NOT_FOUND
+  ERROR_REASON_UNKNOWN_DATASET = 5;
+  // UNAVAILABLE
+  ERROR_REASON_ENGINE_UNREACHABLE = 6;
+}
+
+// Optional structured detail. Servers MAY pack it into the `details` of a
+// google.rpc.Status (grpc-status-details-bin). Clients MUST NOT require it:
+// the gRPC status code and message are the contract.
+message ErrorDetail {
+  ErrorReason reason = 1;
+  // Offending dataset or column name, when applicable.
+  string subject = 2;
+}

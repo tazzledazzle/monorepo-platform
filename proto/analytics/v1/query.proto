@@ -1,0 +1,71 @@
+// Aggregation queries over a named dataset (reports/gateway -> engine).
+
+syntax = "proto3";
+
+package analytics.v1;
+
+import "analytics/v1/common.proto";
+
+option go_package = "example.com/three_languages_one_workspace/proto/analytics/v1/querypb;querypb";
+option java_package = "com.example.analytics.v1";
+option java_multiple_files = true;
+option java_outer_classname = "QueryProto";
+
+service QueryService {
+  // Runs one aggregation, optionally grouped by one column.
+  //
+  // Status:
+  //   INVALID_ARGUMENT  unknown column (aggregation or group_by), UNSPECIFIED
+  //                     function, SUM/AVG on a STRING column, missing column
+  //                     for a function other than COUNT. Raised by the engine.
+  //   NOT_FOUND         unknown dataset. Raised by the gateway (the engine may
+  //                     also return it).
+  //   UNAVAILABLE       the gateway cannot reach the engine. Retryable.
+  // Clients should set a deadline (suggested 30s); there is no server default.
+  rpc Execute(QueryRequest) returns (QueryResponse);
+}
+
+enum AggregateFunction {
+  AGGREGATE_FUNCTION_UNSPECIFIED = 0;
+  AGGREGATE_FUNCTION_SUM = 1;
+  AGGREGATE_FUNCTION_AVG = 2;
+  AGGREGATE_FUNCTION_COUNT = 3;
+  AGGREGATE_FUNCTION_MIN = 4;
+  AGGREGATE_FUNCTION_MAX = 5;
+}
+
+message Aggregation {
+  AggregateFunction function = 1;
+  // Input column. May be empty only for COUNT (counts rows).
+  // SUM/AVG need INT64 or DOUBLE; MIN/MAX accept any type.
+  string column = 2;
+}
+
+message QueryRequest {
+  // Dataset name; non-empty.
+  string dataset = 1;
+  Aggregation aggregation = 2;
+  // Optional single grouping column. Unset (not "empty string") means no
+  // grouping and the result has exactly one row.
+  optional string group_by = 3;
+}
+
+message QueryResponse {
+  Table result = 1;
+}
+
+// Result table in columnar form.
+//
+// Schema: the group_by column first (if any, with its source name and type),
+// then one aggregate column named "<function>(<column>)" in lower case, e.g.
+// "sum(revenue)", "count(*)" for COUNT without a column.
+// Aggregate types: COUNT -> INT64; AVG -> DOUBLE; SUM -> input type;
+// MIN/MAX -> input type.
+// Row order: ascending by group key (byte order for strings), so output is
+// deterministic.
+message Table {
+  Schema schema = 1;
+  uint32 row_count = 2;
+  // One entry per schema column, schema order, each with row_count values.
+  repeated ColumnData columns = 3;
+}

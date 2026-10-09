@@ -1,0 +1,39 @@
+// Dataset metadata (server/catalog).
+
+syntax = "proto3";
+
+package analytics.v1;
+
+import "analytics/v1/common.proto";
+
+option go_package = "example.com/three_languages_one_workspace/proto/analytics/v1/catalogpb;catalogpb";
+option java_package = "com.example.analytics.v1";
+option java_multiple_files = true;
+option java_outer_classname = "CatalogProto";
+
+service CatalogService {
+  // NOT_FOUND if the dataset is not registered.
+  rpc GetDataset(GetDatasetRequest) returns (GetDatasetResponse);
+  // Datasets sorted by name.
+  rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse);
+}
+
+// Name and schema of one dataset.
+message DatasetInfo {
+  string name = 1;
+  Schema schema = 2;
+}
+
+message GetDatasetRequest {
+  string name = 1;
+}
+
+message GetDatasetResponse {
+  DatasetInfo dataset = 1;
+}
+
+message ListDatasetsRequest {}
+
+message ListDatasetsResponse {
+  repeated DatasetInfo datasets = 1;
+}
