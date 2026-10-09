@@ -9,7 +9,7 @@ This page separates what exists from what the design (`docs/superpowers/specs/20
 | `MODULE.bazel`, `.bazelversion`, `.bazelrc` | platform | Pinned dependencies, Bazel 9.3.0, shared flags | built |
 | `go.mod`, `requirements.in`, `maven_install.json` and lock files | platform | Per-ecosystem dependency locks | built |
 | `tools/build_defs/` | platform | Wrapper macros, `analytics_package`, shared policy | built |
-| `tools/build_defs/proto.bzl`, `proto/analytics/v1/` | platform | `analytics_proto` macro; `common`, `ingest`, `query`, `catalog` `.proto` files (written, build verification pending; see `docs/proto-compatibility.md`) | in progress |
+| `tools/build_defs/proto.bzl`, `proto/analytics/v1/` | platform | `analytics_proto` macro; `common`, `ingest`, `query`, `catalog` `.proto` files (`//proto/...` builds for cc, java, go, py; see `docs/proto-compatibility.md`) | built |
 | `engine/core`, `engine/service` | engine (C++) | Columnar table and aggregations; Ingest and Query gRPC server | planned |
 | `server/catalog` | server (Java) | Dataset metadata registry | planned |
 | `server/gateway` | server (Kotlin) | Public gRPC API; validates against the catalog; calls the engine | planned |

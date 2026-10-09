@@ -76,7 +76,7 @@ Each sample directory also holds a target tagged `manual` that must fail to buil
 
 ## Not built yet
 
-- `analytics_proto` and `analytics_grpc_service` (Phase 3; `analytics_proto` is in progress).
+- `analytics_grpc_service` (Phase 3). `analytics_proto` is built: see `tools/build_defs/proto.bzl` and `proto/analytics/v1/BUILD.bazel`.
 - `analysistest` suites for each macro (Phase 7). Today the macros are covered by the sample targets and tests.
 - Gazelle `map_kind` configuration, so `bazel run //:gazelle` generates the Go macros (Phase 7). The root `BUILD.bazel` defines the Gazelle target but does not set `map_kind` yet.
 - A lint that rejects product BUILD files loading from anywhere but `//tools/build_defs` (Phase 14). For now the rule is a convention.

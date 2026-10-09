@@ -27,7 +27,7 @@ Planning lives in the [beads](docs/planning-in-beads.md) tracker: 17 phases in 4
 |---|---|---|---|
 | 1 | M1 | Bootstrap, pinned dependencies, gRPC codegen spike for five languages | Done |
 | 2 | M1 | Platform layer: 15 `analytics_*` wrapper macros, `analytics_package` rule | Done |
-| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files and compatibility rules written (`docs/proto-compatibility.md`); `analytics_proto` and the five-language build verification are not complete |
+| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files, compatibility rules (`docs/proto-compatibility.md`) and the `analytics_proto` macro are done, and `//proto/...` builds for C++, Java, Go and Python; `analytics_grpc_service` is not built yet |
 | 4 | M1 | C++ query engine | Planned |
 | 5 | M1 | JVM services: Java catalog, Kotlin gateway | Planned |
 | 6 | M1 | Go ingest agent, Python report CLI | Planned |
@@ -52,9 +52,9 @@ Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests
 │   ├── cc.bzl java.bzl kt.bzl go.bzl py.bzl   wrapper macros
 │   ├── common.bzl, jvm.bzl           shared policy and helpers
 │   ├── package.bzl, packaging/       analytics_package rule and its tarball tool
-│   ├── proto.bzl                     analytics_proto (in progress)
+│   ├── proto.bzl                     analytics_proto (built)
 │   └── tests/                        sample targets and fixtures that exercise the layer
-├── proto/analytics/v1/               shared schema: common, ingest, query, catalog .proto (written; build verification pending)
+├── proto/analytics/v1/               shared schema: common, ingest, query, catalog .proto (builds for cc, java, go, py)
 ├── docs/
 │   ├── adding-a-target.md            how to write a BUILD file (packaging section only so far)
 │   ├── planning-in-beads.md          how the plan is tracked
@@ -197,7 +197,7 @@ Phases, gates, and status: [Roadmap](docs/wiki/Roadmap.md).
 - Design spec: [`docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md`](docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md)
 - [Adding a target](docs/adding-a-target.md) (partial)
 - [Planning in beads](docs/planning-in-beads.md)
-- [Proto compatibility rules](docs/proto-compatibility.md) (in progress)
+- [Proto compatibility rules](docs/proto-compatibility.md)
 - Wiki source, in [`docs/wiki/`](docs/wiki/README.md): [Home](docs/wiki/Home.md), [Getting started](docs/wiki/Getting-Started.md), [Architecture](docs/wiki/Architecture.md), [Platform macros](docs/wiki/Platform-Macros.md), [Packaging rule](docs/wiki/Packaging-Rule.md), [Adding a target](docs/wiki/Adding-a-Target.md), [Roadmap](docs/wiki/Roadmap.md), [Findings and gotchas](docs/wiki/Findings-and-Gotchas.md), [Glossary](docs/wiki/Glossary.md)
 
 ## License

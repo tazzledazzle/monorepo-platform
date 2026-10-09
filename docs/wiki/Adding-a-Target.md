@@ -92,4 +92,4 @@ The C++, Java, Python, and `go_binary` wrappers list attributes explicitly. If y
 
 ## Not yet available
 
-`analytics_proto` and `analytics_grpc_service` (Phase 3, in progress) will cover proto-backed services.
+`analytics_proto` is built and generates stubs for four languages (see `proto/analytics/v1/BUILD.bazel`); `analytics_grpc_service` (Phase 3) will cover proto-backed services.
