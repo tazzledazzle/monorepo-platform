@@ -1,0 +1,37 @@
+load("//tools/build_defs:go.bzl", "analytics_go_library", "analytics_go_test")
+
+analytics_go_library(
+    name = "agent",
+    srcs = [
+        "client.go",
+        "csvdata.go",
+    ],
+    importpath = "example.com/three_languages_one_workspace/ingest/agent",
+    team = "ingest",
+    visibility = ["//ingest:__subpackages__"],
+    deps = [
+        "//proto/analytics/v1:common_go_grpc",
+        "//proto/analytics/v1:ingest_go_grpc",
+        "@org_golang_google_grpc//:grpc",
+    ],
+)
+
+analytics_go_test(
+    name = "agent_test",
+    srcs = [
+        "client_test.go",
+        "csvdata_test.go",
+    ],
+    data = glob(["testdata/**"]),
+    embed = [":agent"],
+    team = "ingest",
+    deps = [
+        "//proto/analytics/v1:common_go_grpc",
+        "//proto/analytics/v1:ingest_go_grpc",
+        "@org_golang_google_grpc//:grpc",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//credentials/insecure",
+        "@org_golang_google_grpc//status",
+        "@org_golang_google_grpc//test/bufconn",
+    ],
+)

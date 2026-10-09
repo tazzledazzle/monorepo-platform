@@ -1,0 +1,36 @@
+load("//tools/build_defs:py.bzl", "analytics_py_binary", "analytics_py_library", "analytics_py_test")
+
+analytics_py_library(
+    name = "report_lib",
+    srcs = ["report_lib.py"],
+    imports = ["../.."],
+    team = "reports",
+    visibility = ["//reports:__subpackages__"],
+    deps = [
+        "//proto/analytics/v1:query_py_grpc",
+        "@pip//grpcio",
+        "@pip//protobuf",
+        "@pip//tabulate",
+    ],
+)
+
+analytics_py_binary(
+    name = "cli",
+    srcs = ["main.py"],
+    main = "main.py",
+    team = "reports",
+    visibility = ["//visibility:public"],
+    deps = [":report_lib"],
+)
+
+analytics_py_test(
+    name = "report_lib_test",
+    srcs = ["report_lib_test.py"],
+    team = "reports",
+    deps = [
+        ":report_lib",
+        "//proto/analytics/v1:query_py_grpc",
+        "@pip//grpcio",
+        "@pip//protobuf",
+    ],
+)

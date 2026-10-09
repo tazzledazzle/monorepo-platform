@@ -1,0 +1,29 @@
+load("//tools/build_defs:go.bzl", "analytics_go_binary", "analytics_go_library", "analytics_go_test")
+
+analytics_go_library(
+    name = "main_lib",
+    srcs = ["main.go"],
+    importpath = "example.com/three_languages_one_workspace/ingest/agent/main",
+    team = "ingest",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//ingest/agent",
+        "@org_golang_google_grpc//:grpc",
+        "@org_golang_google_grpc//credentials/insecure",
+        "@org_golang_google_grpc//status",
+    ],
+)
+
+analytics_go_binary(
+    name = "agent",
+    embed = [":main_lib"],
+    team = "ingest",
+    visibility = ["//visibility:public"],
+)
+
+analytics_go_test(
+    name = "main_test",
+    srcs = ["main_test.go"],
+    embed = [":main_lib"],
+    team = "ingest",
+)
