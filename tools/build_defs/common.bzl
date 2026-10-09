@@ -12,10 +12,13 @@ here; they live in .bazelrc so they take part in the toolchain's cache keys.
 """
 
 TEAM_ATTRS = {
+    # Not `mandatory = True` on purpose: on Bazel 9.3.0 a missing mandatory attribute of a symbolic
+    # macro is reported as an ERROR but `bazel build`/`bazel test` still exit 0 (only `bazel query`
+    # fails). `team_tags` therefore enforces it with fail(), which stops every command.
     "team": attr.string(
-        mandatory = True,
+        default = "",
         configurable = False,
-        doc = "Owning team, e.g. 'engine'. Becomes the tag `team:<name>`.",
+        doc = "Required. Owning team, e.g. 'engine'. Becomes the tag `team:<name>`.",
     ),
 }
 
@@ -34,7 +37,13 @@ TEST_ATTRS = {
 }
 
 def team_tags(tags, team):
-    """Returns `tags` plus the `team:<team>` tag. `tags` may be None."""
+    """Returns `tags` plus the `team:<team>` tag. `tags` may be None.
+
+    Fails at load time, naming the attribute, when `team` is empty. Every analytics_* macro calls
+    this, so this is the single place the "team is required" rule is enforced.
+    """
+    if not team:
+        fail("missing value for mandatory attribute 'team' (package //{}): every analytics_* target must name its owning team".format(native.package_name()))
     return list(tags or []) + ["team:" + team]
 
 def present(attrs):

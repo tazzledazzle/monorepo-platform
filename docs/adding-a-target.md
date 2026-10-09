@@ -252,10 +252,14 @@ To add a Go package:
 Gazelle also reorders attributes in the other packages' BUILD files (buildifier order). That is
 expected and harmless.
 
-A rule without `team` is an error at load time:
-`missing value for mandatory attribute 'team' in 'analytics_go_library' macro`.
-`bazel query` exits 7 on it. On Bazel 9.3.0 we also saw `bazel build` print the same error
-and still succeed, so do not rely on a build exit code to catch it; run `bazel query //...`.
+A rule without `team` is an error at load time, for `bazel build`, `bazel test`, and `bazel query`
+alike:
+`missing value for mandatory attribute 'team' (package //ingest/agent): every analytics_* target must name its owning team`.
+
+`team` is not declared `mandatory = True`. On Bazel 9.3.0 a missing mandatory attribute of a symbolic
+macro prints an error but `bazel build` still exits 0; only `bazel query` fails. `team_tags` in
+`tools/build_defs/common.bzl` checks it with `fail()` instead. `scripts/check_negative.sh` covers
+both the query and the build case.
 
 ## Macro internals
 

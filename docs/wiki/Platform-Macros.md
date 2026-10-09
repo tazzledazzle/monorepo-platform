@@ -8,7 +8,7 @@ Defined in `tools/build_defs/common.bzl`.
 
 | Policy | Behavior |
 |---|---|
-| `team` | Required, non-configurable. Adds the tag `team:<name>`. |
+| `team` | Required (enforced with `fail()` in `team_tags`, so a missing value stops `build`, `test` and `query`), non-configurable. Adds the tag `team:<name>`. |
 | Test size | Tests default to `size = "small"`, so slow tests must opt in visibly. |
 | Visibility | Passed through unchanged. The macro never widens it. |
 | Unset attributes | Dropped before the call, so the wrapped rule's own defaults apply. |

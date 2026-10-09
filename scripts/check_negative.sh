@@ -86,6 +86,9 @@ run_case modern-helper-private     build_fail $N/modern_helper_breach:uses_macro
 # (d) loading errors
 stage missing_team
 run_case missing-team-attr    query_fail "$STAGED_LABEL:all" "missing value for mandatory attribute 'team'"
+# Regression guard: Bazel 9.3.0 reports a missing *mandatory* macro attribute but `bazel build` still
+# exits 0. common.bzl enforces `team` with fail(), so a BUILD (not just a query) must fail too.
+run_case missing-team-build   build_fail "$STAGED_LABEL:no_team" "missing value for mandatory attribute 'team'"
 stage grpc_go
 run_case grpc-service-lang-go query_fail "$STAGED_LABEL:all" "invalid value in 'lang' attribute"
 
