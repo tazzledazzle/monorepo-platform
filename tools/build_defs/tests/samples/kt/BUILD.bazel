@@ -1,4 +1,4 @@
-load("//tools/build_defs:kt.bzl", "analytics_kt_library", "analytics_kt_test")
+load("//tools/build_defs:kt.bzl", "analytics_kt_binary", "analytics_kt_library", "analytics_kt_test")
 
 analytics_kt_library(
     name = "lib",
@@ -19,4 +19,12 @@ analytics_kt_library(
     srcs = ["src/main/kotlin/sample/Warns.kt"],
     tags = ["manual"],
     team = "platform",
+)
+
+analytics_kt_binary(
+    name = "bin",
+    srcs = ["src/main/kotlin/sample/Main.kt"],
+    main_class = "sample.MainKt",
+    team = "platform",
+    deps = [":lib"],
 )

@@ -1,6 +1,8 @@
 """analytics_go_*: Go wrappers (library, binary, test).
 
-rules_go exports real rules, so these inherit every attribute. Gazelle is configured
+rules_go exports real rules for go_library and go_test, so those inherit every attribute.
+`go_binary` is a wrapper *function* (which `inherit_attrs` cannot take), so analytics_go_binary
+lists its attributes explicitly in `_GO_BINARY_ATTRS`; add any that are missing there. Gazelle is configured
 (`# gazelle:map_kind`) to generate calls to these macros instead of the raw rules, so
 `bazel run //:gazelle` keeps BUILD files on the platform layer.
 
@@ -23,10 +25,22 @@ analytics_go_library = macro(
     implementation = _make_impl(go_library),
 )
 
+_GO_BINARY_ATTRS = {
+    "srcs": attr.label_list(allow_files = [".go", ".s", ".h", ".c"]),
+    "deps": attr.label_list(),
+    "embed": attr.label_list(),
+    "data": attr.label_list(allow_files = True),
+    "importpath": attr.string(),
+    "gc_linkopts": attr.string_list(),
+    "x_defs": attr.string_dict(),
+    "pure": attr.string(values = ["on", "off", "auto"], default = "auto"),
+    "static": attr.string(values = ["on", "off", "auto"], default = "auto"),
+}
+
 analytics_go_binary = macro(
     doc = "go_binary with a required `team`.",
-    inherit_attrs = go_binary,
-    attrs = TEAM_ATTRS,
+    inherit_attrs = "common",
+    attrs = TEAM_ATTRS | _GO_BINARY_ATTRS,
     implementation = _make_impl(go_binary),
 )
 

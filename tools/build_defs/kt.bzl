@@ -1,4 +1,4 @@
-"""analytics_kt_*: Kotlin wrappers (library, test).
+"""analytics_kt_*: Kotlin wrappers (library, binary, test).
 
 Unlike cc/java/py, rules_kotlin exports real rules, so these macros genuinely
 `inherit_attrs` from them and every attribute of kt_jvm_library/kt_jvm_test is accepted.
@@ -13,7 +13,7 @@ Policy added on top of the wrapped rule:
 """
 
 load("@rules_kotlin//kotlin:core.bzl", "kt_kotlinc_options")
-load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library", "kt_jvm_test")
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_binary", "kt_jvm_library", "kt_jvm_test")
 load(":common.bzl", "TEAM_ATTRS", "present", "team_tags")
 load(":jvm.bzl", "derive_test_class")
 
@@ -26,6 +26,15 @@ def _strict_options(name, visibility):
 
 def _library_impl(name, visibility, team, tags, **kwargs):
     kt_jvm_library(
+        name = name,
+        visibility = visibility,
+        tags = team_tags(tags, team),
+        kotlinc_opts = _strict_options(name, visibility),
+        **present(kwargs)
+    )
+
+def _binary_impl(name, visibility, team, tags, **kwargs):
+    kt_jvm_binary(
         name = name,
         visibility = visibility,
         tags = team_tags(tags, team),
@@ -52,6 +61,13 @@ analytics_kt_library = macro(
     implementation = _library_impl,
 )
 
+analytics_kt_binary = macro(
+    doc = "kt_jvm_binary with warnings-as-errors and a required `team`.",
+    inherit_attrs = kt_jvm_binary,
+    attrs = TEAM_ATTRS | {"kotlinc_opts": None},
+    implementation = _binary_impl,
+)
+
 analytics_kt_test = macro(
     doc = "kt_jvm_test with warnings-as-errors, JUnit 4, derived test_class, size=small and a required `team`.",
     inherit_attrs = kt_jvm_test,
@@ -61,7 +77,7 @@ analytics_kt_test = macro(
         "srcs": attr.label_list(allow_files = [".kt", ".java"], configurable = False),
         "size": attr.string(default = "small", configurable = False, values = ["small", "medium", "large", "enormous"]),
         "test_class": attr.string(configurable = False),
-        "deps": attr.label_list(providers = [[JavaInfo]]),
+        "deps": attr.label_list(),
     },
     implementation = _test_impl,
 )

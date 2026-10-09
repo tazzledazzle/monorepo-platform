@@ -1,8 +1,11 @@
-load("//tools/build_defs:go.bzl", "analytics_go_library", "analytics_go_test")
+load("//tools/build_defs:go.bzl", "analytics_go_binary", "analytics_go_library", "analytics_go_test")
 
 analytics_go_library(
     name = "g",
-    srcs = ["g.go"],
+    srcs = [
+        "g.go",
+        "main.go",
+    ],
     importpath = "example.com/three_languages_one_workspace/tools/build_defs/tests/samples/go",
     team = "platform",
 )
@@ -10,6 +13,12 @@ analytics_go_library(
 analytics_go_test(
     name = "g_test",
     srcs = ["g_test.go"],
+    embed = [":g"],
+    team = "platform",
+)
+
+analytics_go_binary(
+    name = "bin",
     embed = [":g"],
     team = "platform",
 )
