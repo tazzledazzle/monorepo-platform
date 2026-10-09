@@ -1,0 +1,32 @@
+# Consumers live outside the macro's package, so they also prove `visibility` is forwarded.
+load("@rules_go//go:def.bzl", "go_binary")
+load("@rules_python//python:py_binary.bzl", "py_binary")
+
+go_binary(
+    name = "go_check",
+    srcs = ["main.go"],
+    deps = [
+        "//tools/build_defs/tests/proto_fixture/service:service_go_grpc",
+        "//tools/build_defs/tests/proto_fixture/types:types_go_grpc",
+    ],
+)
+
+py_binary(
+    name = "py_check",
+    srcs = ["check.py"],
+    main = "check.py",
+    deps = [
+        "//tools/build_defs/tests/proto_fixture/service:service_py_grpc",
+        "@pip//grpcio",
+        "@pip//protobuf",
+    ],
+)
+
+# Targets that only exist to be built (analysis + compile of the other stub languages).
+filegroup(
+    name = "all_stubs",
+    srcs = [
+        "//tools/build_defs/tests/proto_fixture/service:service_cc_grpc",
+        "//tools/build_defs/tests/proto_fixture/service:service_java_grpc",
+    ],
+)

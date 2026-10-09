@@ -1,0 +1,9 @@
+# Negative test fixtures: see ../proto_visibility_test.sh.
+load("//tools/build_defs:proto.bzl", "analytics_proto")
+
+analytics_proto(
+    name = "open",
+    srcs = ["open.proto"],
+    team = "platform",
+    visibility = ["//visibility:public"],
+)

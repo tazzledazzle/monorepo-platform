@@ -1,0 +1,8 @@
+load("//tools/build_defs:proto.bzl", "analytics_proto")
+
+# No visibility passed: every generated target must stay package-private.
+analytics_proto(
+    name = "closed",
+    srcs = ["closed.proto"],
+    team = "platform",
+)

@@ -1,0 +1,4 @@
+syntax = "proto3";
+package fixture.closed.v1;
+option go_package = "example.com/three_languages_one_workspace/tools/build_defs/tests/proto_fixture/private_consumer;closedpb";
+message Closed { string s = 1; }

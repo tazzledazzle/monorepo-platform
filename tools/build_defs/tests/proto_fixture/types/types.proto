@@ -1,0 +1,6 @@
+syntax = "proto3";
+package fixture.types.v1;
+option java_multiple_files = true;
+option java_package = "fixture.types.v1";
+option go_package = "example.com/three_languages_one_workspace/tools/build_defs/tests/proto_fixture/types;typespb";
+message Point { int32 x = 1; int32 y = 2; }

@@ -1,0 +1,4 @@
+syntax = "proto3";
+package fixture.open.v1;
+option go_package = "example.com/three_languages_one_workspace/tools/build_defs/tests/proto_fixture/public_consumer;openpb";
+message Open { string s = 1; }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package fixture.service.v1;
+import "tools/build_defs/tests/proto_fixture/types/types.proto";
+option java_multiple_files = true;
+option java_package = "fixture.service.v1";
+option go_package = "example.com/three_languages_one_workspace/tools/build_defs/tests/proto_fixture/service;servicepb";
+message Reply { fixture.types.v1.Point p = 1; }
+service Fixture { rpc Get(fixture.types.v1.Point) returns (Reply); }

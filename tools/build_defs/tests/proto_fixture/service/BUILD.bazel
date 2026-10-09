@@ -1,0 +1,9 @@
+load("//tools/build_defs:proto.bzl", "analytics_proto")
+
+analytics_proto(
+    name = "service",
+    srcs = ["service.proto"],
+    team = "platform",
+    visibility = ["//tools/build_defs/tests/proto_fixture:__subpackages__"],
+    deps = ["//tools/build_defs/tests/proto_fixture/types:types_proto"],
+)
