@@ -1,0 +1,10 @@
+# Bazel output symlinks (bazel-bin, bazel-out, bazel-testlogs, bazel-<workspace>)
+/bazel-*
+
+# Per-user Bazel flags, imported via try-import in .bazelrc
+/user.bazelrc
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

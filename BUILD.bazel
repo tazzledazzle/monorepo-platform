@@ -1,0 +1,8 @@
+# BUILD.bazel (workspace root)
+load("@gazelle//:def.bzl", "gazelle")  # pulls the gazelle macro from gazelle MODULE
+
+# gazelle:prefix example.com/three_languages_one_workspace
+# gazelle:exclude bazel-*
+
+# Defines the //:gazelle target that `bazel run //:gazelle` looks for
+gazelle(name = "gazelle")
