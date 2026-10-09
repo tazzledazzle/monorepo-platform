@@ -18,7 +18,7 @@ analytics_go_binary(
     name = "agent",
     embed = [":main_lib"],
     team = "ingest",
-    visibility = ["//visibility:public"],
+    visibility = ["//release:__pkg__"],
 )
 
 analytics_go_test(

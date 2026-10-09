@@ -19,7 +19,7 @@ analytics_py_binary(
     srcs = ["main.py"],
     main = "main.py",
     team = "reports",
-    visibility = ["//visibility:public"],
+    visibility = ["//release:__pkg__"],
     deps = [":report_lib"],
 )
 
