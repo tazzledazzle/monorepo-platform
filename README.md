@@ -44,7 +44,7 @@ Limits of what M1 shows:
 - The Python CLI inside `analytics.tar` cannot run from the unpacked tarball (a runfiles limitation, see [Packaging rule](docs/wiki/Packaging-Rule.md)). The tarball is about 308 MB.
 - The spec names `//server/gateway:gateway_deploy.jar`. That label does not exist, because `kt_jvm_binary` produces no deploy jar. `//release:gateway_deploy.jar` comes from a `java_binary` over the Kotlin gateway library.
 - The gateway binds all network interfaces and has no `--host` flag. That matters for the M2 hermeticity work.
-- Clean-build baseline: <!-- BASELINE -->
+- Clean-build baseline: **459 s (7 min 39 s)** for `bazel test //...` from a fresh clone with a new, empty Bazel output base: 8,559 actions (5,108 sandboxed, 65 worker), all 34 tests executed, critical path 60 s. Measured 2026-10-09 on macOS arm64 (Xcode 27) at commit `be4c559`. Bazel's download cache was warm, so a first-ever build on a new machine also pays for fetching dependencies. This is the number M2's remote cache is measured against.
 
 ## What is in the repo
 

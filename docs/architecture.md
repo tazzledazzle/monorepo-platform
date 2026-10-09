@@ -89,4 +89,4 @@ Stated in the design; M3 will verify it with queries. Not yet measured.
 
 ## Clean-build time
 
-<!-- BASELINE: filled by tlow-a6j.15.3 -->
+**Clean-build baseline.** **459 s (7 min 39 s)** for `bazel test //...` from a fresh clone with a new, empty Bazel output base: 8,559 actions (5,108 sandboxed, 65 worker), all 34 tests executed, critical path 60 s. Measured 2026-10-09 on macOS arm64 (Xcode 27) at commit `be4c559`. Bazel's download cache was warm, so a first-ever build on a new machine also pays for fetching dependencies. This is the number M2's remote cache is measured against.
