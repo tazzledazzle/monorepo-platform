@@ -1,0 +1,10 @@
+load("//tools/build_defs:java.bzl", "analytics_java_library")
+
+# EXPECT FAIL "not visible": //server/catalog is visible only to //server/...
+analytics_java_library(
+    name = "breach",
+    srcs = ["Breach.java"],
+    tags = ["manual"],
+    team = "negative",
+    deps = ["//server/catalog"],
+)

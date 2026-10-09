@@ -1,0 +1,10 @@
+load("//tools/build_defs:cc.bzl", "analytics_cc_library")
+
+# EXPECT FAIL "not visible": //engine/core is visible only to //engine/...
+analytics_cc_library(
+    name = "breach",
+    srcs = ["breach.cc"],
+    tags = ["manual"],
+    team = "negative",
+    deps = ["//engine/core"],
+)

@@ -1,0 +1,9 @@
+load("//tools/build_defs:java.bzl", "analytics_java_library")
+
+# EXPECT FAIL "[rawtypes]" (-Xlint:all -Werror).
+analytics_java_library(
+    name = "lint",
+    srcs = ["Lint.java"],
+    tags = ["manual"],
+    team = "negative",
+)

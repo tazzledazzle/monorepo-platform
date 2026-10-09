@@ -1,0 +1,9 @@
+load("//tools/build_defs:kt.bzl", "analytics_kt_library")
+
+# EXPECT FAIL "warning" (Kotlin warnings are errors): useless safe call / deprecation.
+analytics_kt_library(
+    name = "warns",
+    srcs = ["Warns.kt"],
+    tags = ["manual"],
+    team = "negative",
+)

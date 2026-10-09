@@ -1,0 +1,7 @@
+load(":helper.bzl", "modern_with_helper")
+
+modern_with_helper(
+    name = "mod",
+    hdrs = ["h.h"],
+    visibility = ["//visibility:public"],
+)

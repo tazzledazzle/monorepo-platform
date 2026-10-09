@@ -1,0 +1,7 @@
+# EXPECT FAIL "not visible": the symbolic macro's inner helper is private to the macro,
+# unlike legacy_cc_library's public `_hdrs`. (Counterpart of //tests/negative/legacy_leak.)
+filegroup(
+    name = "uses_macro_helper",
+    srcs = ["//tests/negative/modern_helper_def:mod_hdrs"],
+    tags = ["manual"],
+)

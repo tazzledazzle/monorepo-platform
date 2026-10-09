@@ -1,0 +1,9 @@
+load("//tools/build_defs:cc.bzl", "analytics_cc_library")
+
+# EXPECT FAIL "unused variable" (-Werror): unused local in the source.
+analytics_cc_library(
+    name = "unused_var",
+    srcs = ["unused.cc"],
+    tags = ["manual"],
+    team = "negative",
+)

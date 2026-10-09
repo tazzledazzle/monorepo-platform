@@ -1,0 +1,7 @@
+# EXPECT SUCCEED: a target in another package can depend on the legacy macro's undeclared
+# public helper. This demonstrates the leak classic macros allow.
+filegroup(
+    name = "uses_legacy_helper",
+    srcs = ["//tools/build_defs/legacy/sample:legacy_lib_hdrs"],
+    tags = ["manual"],
+)
