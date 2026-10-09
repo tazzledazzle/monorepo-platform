@@ -72,12 +72,17 @@ analytics_kt_binary(
 )
 ```
 
-Each sample directory also holds a target tagged `manual` that must fail to build under the policy (for example `//tools/build_defs/tests/samples/cc:warns`). The automated negative-test script that runs them is planned (Phase 7).
+Each sample directory also holds a target tagged `manual` that must fail to build under the policy (for example `//tools/build_defs/tests/samples/cc:warns`). The negative-test script `scripts/check_negative.sh` builds these and the other cases under `tests/negative/` and checks each error message.
+
+## Composite macros and guardrails
+
+- `analytics_proto` (`tools/build_defs/proto.bzl`): one contract becomes a `proto_library` plus `<name>_cc_grpc`, `<name>_java_grpc`, `<name>_go_grpc` and `<name>_py_grpc`. `<name>_java_grpc` is a `java_library` that re-exports the gRPC stubs, the messages and the dependency protos (see [Findings and Gotchas](Findings-and-Gotchas)). Used by `proto/analytics/v1/BUILD.bazel`.
+- `analytics_grpc_service(name, lang, team, srcs, test_srcs, protos, main, ...)` (`tools/build_defs/service.bzl`) expands to `<name>_lib`, `<name>` (binary) and `<name>_test` using the `analytics_cc_*` or `analytics_kt_*` macros (`lang = "cc"` or `"kt"`, not configurable). Each `protos` entry is the `<x>` name of an `analytics_proto`; the macro picks `<x>_cc_grpc` or `<x>_java_grpc` and adds the gRPC runtime. `main` is the main class (kt) or the file holding `main()` (cc). For C++ it adds `-Wno-error=deprecated-declarations`, because gRPC 1.84 headers call a deprecated absl function. Used by `//engine/service:engine` and `//server/gateway:gateway`. Fixture: `tools/build_defs/tests/service_fixture/`.
+- 15 `analysistest` checks in `tools/build_defs/tests/analysis/` cover the C++, Java, Kotlin, Go and Python wrappers, the two service shapes, and the package rule's provider and nesting.
+- Gazelle `map_kind` (root `BUILD.bazel`): `bazel run //:gazelle` emits `analytics_go_library`, `_binary` and `_test`. `tools` and `tests` are excluded, and proto-generated Go packages are mapped by `resolve` lines.
+- `legacy_cc_library` (`tools/build_defs/legacy/`) is a classic macro kept as a counter-example. Do not copy it.
 
 ## Not built yet
 
-- `analytics_grpc_service(name, lang, team, srcs, test_srcs, protos, main, ...)` is built (`tools/build_defs/service.bzl`). It expands to `<name>_lib`, `<name>` (binary) and `<name>_test` using the `analytics_cc_*` or `analytics_kt_*` macros (`lang = "cc"` or `"kt"`, not configurable). Each `protos` entry is the `<x>` name of an `analytics_proto`; the macro picks `<x>_cc_grpc` or `<x>_java_grpc` and adds the gRPC runtime. `main` is the main class (kt) or the file holding `main()` (cc). Fixture: `tools/build_defs/tests/service_fixture/`.
-- `analytics_proto` is built: see `tools/build_defs/proto.bzl` and `proto/analytics/v1/BUILD.bazel`.
-- `analysistest` suites for each macro (Phase 7). Today the macros are covered by the sample targets and tests.
-- Gazelle `map_kind` configuration, so `bazel run //:gazelle` generates the Go macros (Phase 7). The root `BUILD.bazel` defines the Gazelle target but does not set `map_kind` yet.
 - A lint that rejects product BUILD files loading from anywhere but `//tools/build_defs` (Phase 14). For now the rule is a convention.
+- The `gcc` and `msvc` branches of the C++ warning `select()` have never been compiled, because I only ran macOS clang.

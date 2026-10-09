@@ -14,20 +14,76 @@ macOS arm64 with Xcode 27 and Apple clang 21. Nothing else has been run. The mac
 ## Run the tests
 
 ```sh
-bazel test //tools/build_defs/...
+bazel test //...
 ```
 
-Seven tests run:
+34 tests pass on my machine. They fall into these groups:
 
-| Test | What it checks |
-|---|---|
-| `//tools/build_defs/tests/samples/cc:lib_test` | C++ wrapper, gtest linked in |
-| `//tools/build_defs/tests/samples/java:GreeterTest` | Java wrapper, derived `test_class` |
-| `//tools/build_defs/tests/samples/kt:GreeterTest` | Kotlin wrapper |
-| `//tools/build_defs/tests/samples/go:g_test` | Go wrapper |
-| `//tools/build_defs/tests/samples/py:lib_test` | Python wrapper, pytest shim |
-| `//tools/build_defs/packaging:make_tarball_test` | the tarball tool |
-| `//tools/build_defs/tests/package_fixture:package_rule_test` | `analytics_package` end to end |
+| Group | Targets | What they check |
+|---|---|---|
+| Product unit tests | `//engine/core:table_test`, `:aggregate_test`, `//engine/service:engine_test`, `//server/catalog:CatalogTest`, `//server/gateway:gateway_test`, `//ingest/agent:agent_test`, `//ingest/agent/main:main_test`, `//reports/cli:report_lib_test` | Each component alone |
+| Platform samples | `//tools/build_defs/tests/samples/{cc,java,kt,go,py}` (5 tests) | One wrapper per language |
+| Platform fixtures | `//tools/build_defs/packaging:make_tarball_test`, `//tools/build_defs/tests/package_fixture:package_rule_test`, `//tools/build_defs/tests/service_fixture/{cc,kt}:svc_test` | The tarball tool, `analytics_package`, `analytics_grpc_service` |
+| Analysis tests | `//tools/build_defs/tests/analysis:*` (15 tests) | Tags, flags, providers and defaults the macros and the rule produce |
+| Release tests | `//release:smoke_test`, `//release:package_test` | Whole product, whole package |
+
+## Run the negative tests
+
+```sh
+bash scripts/check_negative.sh
+```
+
+Ten cases. Each builds a target under `tests/negative/` (or a temporary fixture) and checks for a specific error message: a C++, Java, or Kotlin warning under `-Werror`, a visibility breach, a missing `team`, an unsupported `lang`. One case, `legacy-hdrs-leak`, expects success, to show what a classic macro permits. All ten pass. They are a script because a visibility or loading error stops the BUILD file from loading.
+
+## Run the product
+
+Build the four binaries:
+
+```sh
+bazel build //engine/service:engine //server/gateway:gateway \
+  //ingest/agent/main:agent //reports/cli:cli
+```
+
+Start the engine, then the gateway. `--port=0` picks a free port and each server prints `LISTENING <port>` once it accepts calls:
+
+```sh
+bazel-bin/engine/service/engine --port=0 &
+bazel-bin/server/gateway/gateway --engine=127.0.0.1:<engine-port> --port=0 &
+```
+
+Load the sample CSV and ask for a report:
+
+```sh
+bazel-bin/ingest/agent/main/agent_/agent \
+  --engine=127.0.0.1:<engine-port> --dataset=sales testdata/sales.csv
+# loaded 10 rows into sales
+
+bazel-bin/reports/cli/cli \
+  --gateway=127.0.0.1:<gateway-port> --dataset=sales --agg=sum:revenue --group-by=region
+```
+
+The output is the golden file `testdata/sales_by_region.golden`:
+
+```
+region      sum(revenue)
+--------  --------------
+east              195.75
+north              94.05
+south              170.5
+west              102.25
+```
+
+An unknown dataset gives `NOT_FOUND` and an unknown column gives `INVALID_ARGUMENT`, each as one stderr line with exit code 1. Stop both servers with `kill`.
+
+The engine binds `127.0.0.1` by default (`--host` changes it). The gateway binds all interfaces and has no `--host` flag. `//release:smoke_test` does this whole sequence, with cleanup, under `TEST_TMPDIR`.
+
+## Build the package
+
+```sh
+bazel build //release:analytics
+```
+
+This produces `analytics.tar` (about 308 MB, of which about 190 MB is the Python CLI's runfiles) and `analytics.MANIFEST.json`. `//release:package_test` unpacks it and checks every manifest checksum. The packaged Python CLI does not run from the unpacked tarball; see [Packaging Rule](Packaging-Rule).
 
 ## Check reproducibility
 
@@ -37,12 +93,16 @@ tools/build_defs/packaging/check_reproducible.sh
 
 Builds a fixture package in two clean output bases and compares checksums. Exit 0 means identical. It took about a minute here.
 
+## Clean-build time
+
+<!-- BASELINE -->
+
 ## Per-user flags
 
 Put personal Bazel flags in `user.bazelrc` at the repo root. `.bazelrc` imports it and git ignores it.
 
 ## What you cannot run yet
 
-There is no product to run. The repository contains the platform layer, its samples and tests, and in-progress proto work. The engine, gateway, agent, and CLI do not exist yet. See [Roadmap](Roadmap).
+CI, sanitizer builds, a remote cache, hermetic-build checks, and cross-compilation do not exist (M2-M4). See [Roadmap](Roadmap).
 
 Next: [Architecture](Architecture).

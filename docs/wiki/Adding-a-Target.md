@@ -80,7 +80,7 @@ Write plain pytest files. Do not provide a `main`.
 load("//tools/build_defs:go.bzl", "analytics_go_library", "analytics_go_test")
 ```
 
-Attributes match `go_library` and `go_test`. Gazelle should eventually generate these calls through `map_kind`. That configuration is not in the repo yet (Phase 7), so write them by hand for now.
+Attributes match `go_library` and `go_test`. Gazelle generates these calls through `map_kind` (see the root `BUILD.bazel`). It cannot invent the required `team`, so add that attribute by hand after generating.
 
 ## Packaging
 
@@ -90,9 +90,9 @@ See [Packaging Rule](Packaging-Rule), and `docs/adding-a-target.md` for the cano
 
 The C++, Java, Python, and `go_binary` wrappers list attributes explicitly. If you need one that is missing, add it to the attribute dictionary in the `.bzl` file and open a change to the platform layer. See [Findings and Gotchas](Findings-and-Gotchas).
 
-## Not yet available
+## Services from a proto contract
 
-`analytics_proto` is built and generates stubs for four languages (see `proto/analytics/v1/BUILD.bazel`); `analytics_grpc_service` covers proto-backed services. A real Kotlin example from `tools/build_defs/tests/service_fixture/kt/BUILD.bazel`:
+`analytics_proto` generates stubs for four languages (see `proto/analytics/v1/BUILD.bazel`); `analytics_grpc_service` builds proto-backed services, as in `//engine/service` and `//server/gateway`. A real Kotlin example from `tools/build_defs/tests/service_fixture/kt/BUILD.bazel`:
 
 ```python
 analytics_grpc_service(

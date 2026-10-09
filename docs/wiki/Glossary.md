@@ -2,24 +2,29 @@
 
 | Term | Meaning here |
 |---|---|
-| Analysistest | A Skylib test that checks a rule's or macro's analysis-time output (providers, actions, attributes). Planned for Phase 7. |
+| Analysistest | A Skylib test that checks a rule's or macro's analysis-time output (providers, actions, attributes). Used in `tools/build_defs/tests/analysis/`. |
 | `apple_support` | Bazel module that supplies the Xcode-aware C++ toolchain on macOS. |
 | Bazelisk | Launcher that downloads the Bazel version in `.bazelversion`. |
 | Beads (`bd`) | The issue tracker that holds the plan. See `docs/planning-in-beads.md`. |
 | Blitz | Tableau's migration to a unified Bazel monorepo build platform. This project imitates it in miniature. |
 | Bzlmod | Bazel's module system. `MODULE.bazel` replaces `WORKSPACE`. |
-| Classic macro | A `def` function that calls rules. Its generated targets are visible to others. Contrast with symbolic macro. |
+| Classic macro | A `def` function that calls rules. Its generated targets are visible to others. Contrast with symbolic macro. `legacy_cc_library` is the counter-example here. |
 | Configurable attribute | An attribute that may hold a `select()`. Macros that inspect a value need it non-configurable. |
 | Depset | Bazel's efficient, deduplicating collection type for files and other data across rules. |
 | Exec configuration | The configuration for tools that run during the build, as opposed to the target platform. |
+| `analytics_grpc_service` | Composite macro that expands to a library, binary and test for a C++ or Kotlin gRPC service. |
+| `analytics_proto` | Composite macro that turns one `.proto` contract into `proto_library` and gRPC targets for C++, Java, Go and Python. |
 | Gate | Evidence required to close a phase. |
-| Gazelle | BUILD-file generator for Go. `map_kind` makes it emit our macros. Not configured yet. |
+| Gazelle | BUILD-file generator for Go. `map_kind` makes it emit our macros; configured in the root `BUILD.bazel`. |
 | `inherit_attrs` | `macro()` option that copies attributes from a rule or macro. Does not accept plain functions. |
+| Deploy jar | Self-contained jar with all dependencies. `kt_jvm_binary` does not produce one, so `//release:gateway_deploy.jar` comes from a `java_binary`. |
 | Known contributing modules | `maven.install` setting that names modules adding to the shared `@maven` repo. |
+| Negative test | A target that must fail to build, checked by `scripts/check_negative.sh`. |
 | Milestone (M1-M4) | A group of phases with its own spec and working result. |
 | Phase | A numbered epic (1 to 17) in the tracker, with a goal and acceptance criteria. |
 | Platform layer | `tools/build_defs`: the macros and rules that product teams load. |
+| Output base | The directory where Bazel keeps build state for a workspace. Separate output bases give clean builds. |
 | Provider | A struct a rule returns for other rules to read, such as `AnalyticsPackageInfo`. |
 | Runfiles | Files a binary needs at run time, tracked by Bazel separately from its main output. |
 | Symbolic macro | A macro defined with `macro()`. It has typed attributes, and its internal targets are private. |
-| `team` tag | Tag `team:<name>` added by every wrapper. Planned use: mapping changes to owners in `bazel query`. |
+| `team` tag | Tag `team:<name>` added by every wrapper. Enforced with `fail()` in `team_tags`. Planned use (M3): mapping changes to owners in `bazel query`. |

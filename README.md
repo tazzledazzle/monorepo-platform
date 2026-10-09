@@ -2,7 +2,7 @@
 
 A learning sandbox that rebuilds, at small scale, a unified Bazel monorepo build platform: five languages, one build graph, and a shared platform layer that product teams use instead of raw `rules_*`.
 
-**Status: early.** The platform layer (pinned dependencies, 15 wrapper macros, a packaging rule) works and is tested. The product it is meant to build is not written yet. See [Status](#status).
+**Status: milestone M1 is built and verified; M2-M4 are not started.** The platform layer (pinned dependencies, 15 wrapper macros, composite proto and service macros, a packaging rule) builds a five-language analytics product that runs end to end. `bazel test //...` passes 34 tests on my Mac. See [Status](#status).
 
 ## Why this exists
 
@@ -21,22 +21,30 @@ This is a portfolio project. It makes no production claims.
 
 ## Status
 
-Planning lives in the [beads](docs/planning-in-beads.md) tracker: 17 phases in 4 milestones. Figures below were read from the tracker on 2026-10-09.
+Planning lives in the [beads](docs/planning-in-beads.md) tracker: 17 phases in 4 milestones. Figures below were read from the tracker on 2026-10-09 (`bd stats`: 183 issues, 90 closed).
 
 | Phase | Milestone | Scope | Status |
 |---|---|---|---|
 | 1 | M1 | Bootstrap, pinned dependencies, gRPC codegen spike for five languages | Done |
 | 2 | M1 | Platform layer: 15 `analytics_*` wrapper macros, `analytics_package` rule | Done |
-| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files, compatibility rules (`docs/proto-compatibility.md`) and the `analytics_proto` macro are done, and `//proto/...` builds for C++, Java, Go and Python; `analytics_grpc_service` is built (`tools/build_defs/service.bzl`, cc and kt, tested by `//tools/build_defs/tests/service_fixture/...`) |
-| 4 | M1 | C++ query engine | Planned |
-| 5 | M1 | JVM services: Java catalog, Kotlin gateway | Planned |
-| 6 | M1 | Go ingest agent, Python report CLI | Planned |
-| 7 | M1 | `analysistest` suites, negative tests, end-to-end release tests, docs, Gazelle `map_kind` | Planned |
+| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | Done |
+| 4 | M1 | C++ query engine (`engine/core`, `engine/service`) | Done |
+| 5 | M1 | JVM services: Java catalog, Kotlin gateway | Done |
+| 6 | M1 | Go ingest agent, Python report CLI | Done |
+| 7 | M1 | `analysistest` suites, negative tests, end-to-end release tests, docs, Gazelle `map_kind` | Built and passing; the epic stays open until the clean-build baseline is recorded |
 | 8-10 | M2 | Hermetic builds, sanitizers (ASAN/TSAN/UBSAN), local remote cache | Planned |
 | 11-14 | M3 | Dependency pinning and conflict checks, affected-target detection, CI, governance (lint, ownership, proto compatibility) | Planned |
 | 15-17 | M4 | Platforms and toolchains, Linux cross-compile from macOS, legacy CMake shim | Planned, not yet broken into stories |
 
-Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests, sanitizer configs, remote cache, CI, and cross-compilation. There is no CI, so there is no CI badge.
+Not built: sanitizer configs, hermetic-build flags, remote cache, CI, and cross-compilation (M2-M4). There is no CI, so there is no CI badge.
+
+Limits of what M1 shows:
+
+- Everything ran on macOS arm64 only. The `gcc` and `msvc` warning branches of the C++ macros have never been compiled.
+- The Python CLI inside `analytics.tar` cannot run from the unpacked tarball (a runfiles limitation, see [Packaging rule](docs/wiki/Packaging-Rule.md)). The tarball is about 308 MB.
+- The spec names `//server/gateway:gateway_deploy.jar`. That label does not exist, because `kt_jvm_binary` produces no deploy jar. `//release:gateway_deploy.jar` comes from a `java_binary` over the Kotlin gateway library.
+- The gateway binds all network interfaces and has no `--host` flag. That matters for the M2 hermeticity work.
+- Clean-build baseline: <!-- BASELINE -->
 
 ## What is in the repo
 
@@ -47,29 +55,31 @@ Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests
 ├── go.mod, go.sum                    Go dependencies (via Gazelle go_deps)
 ├── requirements.in, requirements_lock.txt   Python dependencies
 ├── maven_install.json                Maven lock file
-├── BUILD.bazel                       Gazelle target
-├── tools/build_defs/                 the platform layer (built, tested)
+├── BUILD.bazel                       Gazelle target and map_kind configuration
+├── tools/build_defs/                 the platform layer
 │   ├── cc.bzl java.bzl kt.bzl go.bzl py.bzl   wrapper macros
 │   ├── common.bzl, jvm.bzl           shared policy and helpers
 │   ├── package.bzl, packaging/       analytics_package rule and its tarball tool
-│   ├── proto.bzl                     analytics_proto (built)
-│   └── tests/                        sample targets and fixtures that exercise the layer
-├── proto/analytics/v1/               shared schema: common, ingest, query, catalog .proto (builds for cc, java, go, py)
+│   ├── proto.bzl, service.bzl        analytics_proto, analytics_grpc_service
+│   ├── legacy/                       classic-macro counter-example (do not copy)
+│   └── tests/                        samples, fixtures, and 15 analysistests (tests/analysis)
+├── proto/analytics/v1/               shared schema: common, ingest, query, catalog .proto
+├── engine/core, engine/service       C++ columnar engine and its gRPC server
+├── server/catalog, server/gateway    Java catalog library, Kotlin gRPC gateway
+├── ingest/agent                      Go CSV ingest agent
+├── reports/cli                       Python report CLI
+├── testdata/                         sample CSV and golden report
+├── release/                          analytics_package target, smoke_test, package_test
+├── tests/negative/                   targets that must fail to build (run by scripts/check_negative.sh)
+├── scripts/check_negative.sh         negative-test runner
 ├── docs/
-│   ├── adding-a-target.md            how to write a BUILD file (packaging section only so far)
+│   ├── architecture.md               design overview
+│   ├── adding-a-target.md            how to write a BUILD file
 │   ├── planning-in-beads.md          how the plan is tracked
+│   ├── proto-compatibility.md        schema change rules
 │   ├── superpowers/specs/            the M1 design
 │   └── wiki/                         source for the GitHub wiki
-├── .beads/                           issue tracker state
-│
-│   Planned, not yet present:
-├── engine/                           C++ core and gRPC service
-├── server/                           Java catalog, Kotlin gateway
-├── ingest/agent/                     Go ingest agent
-├── reports/cli/                      Python report CLI
-├── release/                          package target and end-to-end tests
-├── testdata/                         sample CSV and golden output
-└── tests/negative/                   targets that must fail to build
+└── .beads/                           issue tracker state
 ```
 
 ## Quick start
@@ -82,13 +92,40 @@ Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests
 
 **Tested on macOS arm64 only** (Xcode 27, Apple clang 21). Linux and Windows are untested; the macros avoid platform-specific flags, but I have not run them there.
 
-### Run the platform tests
+### Run all tests
 
 ```sh
-bazel test //tools/build_defs/...
+bazel test //...
 ```
 
-This runs 7 tests: one per language sample (C++, Java, Kotlin, Go, Python), the tarball tool, and the packaging rule fixture. All pass on my machine.
+34 tests pass on my machine: engine, catalog, gateway, agent and CLI unit tests; the platform samples and fixtures; 15 `analysistest` checks; `//release:smoke_test`; and `//release:package_test`.
+
+### Run the negative tests
+
+```sh
+bash scripts/check_negative.sh
+```
+
+Ten cases, each a target that must fail to build (or, for one legacy counter-example, a leak that must succeed) with a specific message. They run from a script because visibility and loading errors stop a BUILD file from loading, so they cannot be in-graph tests. All ten pass.
+
+### Run the product
+
+```sh
+bazel build //engine/service:engine //server/gateway:gateway //ingest/agent/main:agent //reports/cli:cli
+
+bazel-bin/engine/service/engine --port=0 &          # prints: LISTENING <engine-port>
+bazel-bin/server/gateway/gateway --engine=127.0.0.1:<engine-port> --port=0 &   # prints: LISTENING <gateway-port>
+bazel-bin/ingest/agent/main/agent_/agent --engine=127.0.0.1:<engine-port> --dataset=sales testdata/sales.csv
+bazel-bin/reports/cli/cli --gateway=127.0.0.1:<gateway-port> --dataset=sales --agg=sum:revenue --group-by=region
+```
+
+The CLI output matches `testdata/sales_by_region.golden`. `//release:smoke_test` automates this sequence, plus the `NOT_FOUND` and `INVALID_ARGUMENT` error paths. [Getting started](docs/wiki/Getting-Started.md) has the full walk-through.
+
+### Build the package
+
+```sh
+bazel build //release:analytics    # analytics.tar and analytics.MANIFEST.json
+```
 
 ### Check that packages are reproducible
 
@@ -147,7 +184,11 @@ analytics_java_test(
 
 **Policy split.** Flags that affect the toolchain or compatibility (`-std=c++20`, Java 17) live in `.bazelrc`, where they take part in cache keys. Per-target policy (warnings, test dependencies, tags) lives in macros.
 
-Details: [Platform macros](docs/wiki/Platform-Macros.md), [Packaging rule](docs/wiki/Packaging-Rule.md), [Adding a target](docs/adding-a-target.md).
+**Composite macros.** `analytics_proto` expands one `.proto` contract into a `proto_library` plus C++, Java, Go and Python gRPC targets. `analytics_grpc_service` expands to a library, binary and test for a C++ or Kotlin service.
+
+**Guardrails.** 15 `analysistest` checks cover the macros and the package rule. Ten negative cases (`scripts/check_negative.sh`) prove that warnings, visibility, a missing `team` and a bad `lang` fail the build. Gazelle is configured with `map_kind` so `bazel run //:gazelle` emits `analytics_go_*` instead of raw `go_*`.
+
+Details: [Platform macros](docs/wiki/Platform-Macros.md), [Packaging rule](docs/wiki/Packaging-Rule.md), [Architecture](docs/architecture.md), [Adding a target](docs/adding-a-target.md).
 
 ## How planning works
 
@@ -169,7 +210,9 @@ The full list, with fixes, is in [Findings and gotchas](docs/wiki/Findings-and-G
 - **A macro that inspects `srcs` needs it non-configurable.** The JVM test wrappers derive `test_class` from `srcs`, so `srcs` cannot be a `select()` there.
 - **grpc-java and protobuf both contribute to `@maven`.** The root module must set `known_contributing_modules` and add `animal-sniffer-annotations`, or analysis fails.
 - **Go needs two proto compilers**, `go_proto` and `go_grpc_v2`. With `go_grpc_v2` alone the message types are undefined.
-- **A cold C++ plus Java gRPC build took 215 s (4,598 actions)** in the spike. That is the baseline for the planned cache work.
+- **A missing mandatory `team` attribute did not fail the build on Bazel 9.3.0.** It printed an ERROR but `bazel build` and `bazel test` exited 0. `team` is now checked with `fail()`.
+- **Gazelle `map_kind` alone also rewrote proto targets.** It needed `proto disable_global`, `resolve` lines and excludes.
+- **A cold C++ plus Java gRPC build took 215 s (4,598 actions)** in the spike. The full clean-build baseline is above.
 
 ## Roadmap
 
@@ -177,10 +220,10 @@ Four milestones, each with its own spec, plan, and working result:
 
 | Milestone | Theme |
 |---|---|
-| M1 | Layout, mini analytics product, platform macros, shared proto, packaging |
-| M2 | Hermeticity, sanitizers, local remote cache |
-| M3 | Dependency pinning, affected-target CI, governance |
-| M4 | Platforms, toolchains, cross-compilation, legacy CMake shim |
+| M1 | Layout, mini analytics product, platform macros, shared proto, packaging. Built. |
+| M2 | Hermeticity, sanitizers, local remote cache. Not started. |
+| M3 | Dependency pinning, affected-target CI, governance. Not started. |
+| M4 | Platforms, toolchains, cross-compilation, legacy CMake shim. Not started. |
 
 Phases, gates, and status: [Roadmap](docs/wiki/Roadmap.md).
 
@@ -190,12 +233,13 @@ Phases, gates, and status: [Roadmap](docs/wiki/Roadmap.md).
 - Work from the tracker: `bd ready`, claim a task, close it with evidence.
 - Do not hard-code absolute paths or macOS-only flags in macros or BUILD files. M4 depends on that.
 - Put per-user Bazel flags in `user.bazelrc`; it is git-ignored and imported by `.bazelrc`.
-- Run `bazel test //tools/build_defs/...` before sending a change to the platform layer.
+- Run `bazel test //...` and `bash scripts/check_negative.sh` before sending a change to the platform layer.
 
 ## Documentation
 
 - Design spec: [`docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md`](docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md)
-- [Adding a target](docs/adding-a-target.md) (partial)
+- [Architecture](docs/architecture.md)
+- [Adding a target](docs/adding-a-target.md)
 - [Planning in beads](docs/planning-in-beads.md)
 - [Proto compatibility rules](docs/proto-compatibility.md)
 - Wiki source, in [`docs/wiki/`](docs/wiki/README.md): [Home](docs/wiki/Home.md), [Getting started](docs/wiki/Getting-Started.md), [Architecture](docs/wiki/Architecture.md), [Platform macros](docs/wiki/Platform-Macros.md), [Packaging rule](docs/wiki/Packaging-Rule.md), [Adding a target](docs/wiki/Adding-a-Target.md), [Roadmap](docs/wiki/Roadmap.md), [Findings and gotchas](docs/wiki/Findings-and-Gotchas.md), [Glossary](docs/wiki/Glossary.md)

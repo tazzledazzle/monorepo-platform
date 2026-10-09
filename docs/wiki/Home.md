@@ -4,7 +4,7 @@ A learning sandbox that rebuilds a small unified Bazel monorepo platform, in the
 
 ## Status in one paragraph
 
-Phases 1 and 2 of 17 are done: all dependencies are pinned, gRPC code generation was proven for five languages in a spike, and `tools/build_defs` provides 15 wrapper macros plus a reproducible `analytics_package` rule. The proto schema and the `analytics_proto` macro are in progress. The product services, release tests, sanitizers, remote cache, CI, and cross-compilation are planned, not built. See [Roadmap](Roadmap).
+Milestone M1 (phases 1-7) is built and verified on macOS arm64. `tools/build_defs` provides 15 wrapper macros, `analytics_proto`, `analytics_grpc_service`, and a reproducible `analytics_package` rule. They build a C++ engine, a Java catalog, a Kotlin gateway, a Go ingest agent, and a Python report CLI over one protobuf schema. `bazel test //...` passes 34 tests, and ten negative cases pass. M2 (hermeticity, sanitizers, remote cache), M3 (CI, governance), and M4 (platforms, cross-compilation) are not started. No CI exists. See [Roadmap](Roadmap).
 
 ## Where to start
 
