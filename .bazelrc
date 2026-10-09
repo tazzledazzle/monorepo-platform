@@ -12,6 +12,11 @@ build --tool_java_language_version=17
 build --java_runtime_version=remotejdk_17
 build --tool_java_runtime_version=remotejdk_17
 
+# Python: do not auto-create __init__.py in runfiles. Each generated proto stub lives under its own
+# _virtual_imports/<name>_proto/ root; with auto-created __init__.py files the first root on sys.path
+# hides the others (query_pb2 cannot import common_pb2). Without them analytics.v1 merges as a namespace package.
+build --incompatible_default_to_explicit_init_py
+
 # ---- test ----
 test --test_output=errors
 

@@ -5,33 +5,13 @@ Kept free of process concerns so `main.py` stays a thin wrapper and tests can dr
 """
 
 import argparse
-import os
 import sys
 from typing import Callable, Optional, Sequence
 
 import grpc
 from tabulate import tabulate
 
-import analytics.v1
-
-
-def _merge_proto_package_dirs() -> None:
-    """Makes the per-proto `analytics.v1` directories importable as one package.
-
-    Each generated stub target lives under its own `_virtual_imports/<name>_proto/` root and
-    rules_python gives every root a regular `analytics/v1/__init__.py`, so the first one on
-    sys.path hides `common_pb2` (imported by `query_pb2`). Extending the package `__path__`
-    with every sys.path root restores the namespace-package behavior.
-    """
-    for entry in sys.path:
-        d = os.path.join(entry, "analytics", "v1")
-        if os.path.isdir(d) and d not in analytics.v1.__path__:
-            analytics.v1.__path__.append(d)
-
-
-_merge_proto_package_dirs()
-
-from analytics.v1 import common_pb2, query_pb2, query_pb2_grpc  # noqa: E402
+from analytics.v1 import common_pb2, query_pb2, query_pb2_grpc
 
 DEADLINE_SECONDS = 30.0
 

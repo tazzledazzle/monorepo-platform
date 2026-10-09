@@ -4,8 +4,8 @@ from concurrent import futures
 import grpc
 import pytest
 
-from reports.cli import report_lib  # first: merges the analytics.v1 package dirs
-from analytics.v1 import common_pb2, query_pb2, query_pb2_grpc  # noqa: E402
+from reports.cli import report_lib
+from analytics.v1 import common_pb2, query_pb2, query_pb2_grpc
 
 
 def test_parse_agg_ok():
