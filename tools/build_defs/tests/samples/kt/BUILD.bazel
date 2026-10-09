@@ -1,0 +1,22 @@
+load("//tools/build_defs:kt.bzl", "analytics_kt_library", "analytics_kt_test")
+
+analytics_kt_library(
+    name = "lib",
+    srcs = ["src/main/kotlin/sample/Greeter.kt"],
+    team = "platform",
+)
+
+analytics_kt_test(
+    name = "GreeterTest",
+    srcs = ["src/test/kotlin/sample/GreeterTest.kt"],
+    team = "platform",
+    deps = [":lib"],
+)
+
+# Must FAIL to build (warnings are errors).
+analytics_kt_library(
+    name = "warns",
+    srcs = ["src/main/kotlin/sample/Warns.kt"],
+    tags = ["manual"],
+    team = "platform",
+)

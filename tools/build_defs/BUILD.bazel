@@ -1,0 +1,2 @@
+# Platform layer: product BUILD files load only from here (see docs/adding-a-target.md).
+exports_files(["pytest_main.py"])

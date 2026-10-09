@@ -1,0 +1,14 @@
+load("//tools/build_defs:py.bzl", "analytics_py_library", "analytics_py_test")
+
+analytics_py_library(
+    name = "lib",
+    srcs = ["lib.py"],
+    team = "platform",
+)
+
+analytics_py_test(
+    name = "lib_test",
+    srcs = ["lib_test.py"],
+    team = "platform",
+    deps = [":lib"],
+)
