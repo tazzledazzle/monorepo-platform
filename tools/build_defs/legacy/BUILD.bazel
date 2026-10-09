@@ -1,0 +1,2 @@
+# Counter-example only; see legacy_cc_library.bzl.
+exports_files(["legacy_cc_library.bzl"])

@@ -1,0 +1,19 @@
+load("//tools/build_defs:cc.bzl", "analytics_cc_library")
+load("//tools/build_defs/legacy:legacy_cc_library.bzl", "legacy_cc_library")
+
+# Classic macro: also creates a PUBLIC :legacy_lib_hdrs (the leak).
+legacy_cc_library(
+    name = "legacy_lib",
+    srcs = ["lib.cc"],
+    hdrs = ["lib.h"],
+    visibility = ["//visibility:public"],
+)
+
+# Symbolic equivalent: creates nothing but :modern_lib.
+analytics_cc_library(
+    name = "modern_lib",
+    srcs = ["lib.cc"],
+    hdrs = ["lib.h"],
+    team = "platform",
+    visibility = ["//visibility:public"],
+)
