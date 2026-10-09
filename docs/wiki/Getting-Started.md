@@ -4,7 +4,7 @@
 
 - [Bazelisk](https://github.com/bazelbuild/bazelisk). `.bazelversion` pins Bazel 9.3.0.
 - macOS: Xcode. `apple_support` 2.10.0 is declared before `rules_cc` in `MODULE.bazel` so Bazel uses the Xcode-aware C++ toolchain. Without it, Apple clang from Xcode 27 failed because the toolchain did not know the SDK's `SDKSettings.json`.
-- Network access on first build. Bazel fetches JDK 17 (`remotejdk_17`), a Python 3.12 toolchain, and Maven, pip, and Go dependencies.
+- Network access on first build. Bazel fetches its JDKs (the repo targets Java 17 with `remotejdk_17`), a Python 3.12 toolchain, and Maven, pip, and Go dependencies.
 - You do not install a JDK, Python, or Go yourself.
 
 ## Tested platforms
@@ -35,7 +35,7 @@ Seven tests run:
 tools/build_defs/packaging/check_reproducible.sh
 ```
 
-Builds a fixture package in two clean output bases and compares checksums. Exit 0 means identical.
+Builds a fixture package in two clean output bases and compares checksums. Exit 0 means identical. It took about a minute here.
 
 ## Per-user flags
 
@@ -43,6 +43,6 @@ Put personal Bazel flags in `user.bazelrc` at the repo root. `.bazelrc` imports 
 
 ## What you cannot run yet
 
-There is no product to run. `bazel build //...` builds the platform layer and samples only. The engine, gateway, agent, and CLI do not exist yet. See [Roadmap](Roadmap).
+There is no product to run. The repository contains the platform layer, its samples and tests, and in-progress proto work. The engine, gateway, agent, and CLI do not exist yet. See [Roadmap](Roadmap).
 
 Next: [Architecture](Architecture).

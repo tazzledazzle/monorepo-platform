@@ -27,7 +27,7 @@ Planning lives in the [beads](docs/planning-in-beads.md) tracker: 17 phases in 4
 |---|---|---|---|
 | 1 | M1 | Bootstrap, pinned dependencies, gRPC codegen spike for five languages | Done |
 | 2 | M1 | Platform layer: 15 `analytics_*` wrapper macros, `analytics_package` rule | Done |
-| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress (uncommitted work; not yet verified) |
+| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files and compatibility rules written (`docs/proto-compatibility.md`); `analytics_proto` and the five-language build verification are not complete |
 | 4 | M1 | C++ query engine | Planned |
 | 5 | M1 | JVM services: Java catalog, Kotlin gateway | Planned |
 | 6 | M1 | Go ingest agent, Python report CLI | Planned |
@@ -54,7 +54,7 @@ Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests
 │   ├── package.bzl, packaging/       analytics_package rule and its tarball tool
 │   ├── proto.bzl                     analytics_proto (in progress)
 │   └── tests/                        sample targets and fixtures that exercise the layer
-├── proto/analytics/v1/               shared schema (in progress)
+├── proto/analytics/v1/               shared schema: common, ingest, query, catalog .proto (written; build verification pending)
 ├── docs/
 │   ├── adding-a-target.md            how to write a BUILD file (packaging section only so far)
 │   ├── planning-in-beads.md          how the plan is tracked
@@ -78,7 +78,7 @@ Not built: the engine, catalog, gateway, ingest agent, report CLI, release tests
 
 - [Bazelisk](https://github.com/bazelbuild/bazelisk). The repo pins Bazel 9.3.0 in `.bazelversion`; Bazelisk downloads it.
 - On macOS, Xcode. `apple_support` is pinned and declared before `rules_cc` so Bazel finds the Xcode toolchain. Without it, Apple clang from Xcode 27 failed on a missing `SDKSettings.json`.
-- A network connection for the first build. Bazel fetches JDK 17 (`remotejdk_17`), a Python 3.12 toolchain, and the Maven, pip, and Go dependencies.
+- A network connection for the first build. Bazel fetches its JDKs (the repo targets Java 17 with `remotejdk_17`), a Python 3.12 toolchain, and the Maven, pip, and Go dependencies.
 
 **Tested on macOS arm64 only** (Xcode 27, Apple clang 21). Linux and Windows are untested; the macros avoid platform-specific flags, but I have not run them there.
 
@@ -96,7 +96,7 @@ This runs 7 tests: one per language sample (C++, Java, Kotlin, Go, Python), the 
 tools/build_defs/packaging/check_reproducible.sh
 ```
 
-The script builds the fixture package in two clean output bases and compares the sha256 of the tarball and manifest. It prints `REPRODUCIBLE` on success. It takes a few minutes because each build starts from an empty output base.
+The script builds the fixture package in two clean output bases and compares the sha256 of the tarball and manifest. It prints `REPRODUCIBLE` on success. It took about a minute on my machine because each build starts from an empty output base.
 
 ## The platform layer
 
@@ -197,6 +197,7 @@ Phases, gates, and status: [Roadmap](docs/wiki/Roadmap.md).
 - Design spec: [`docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md`](docs/superpowers/specs/2026-10-09-m1-monorepo-layout-macros-design.md)
 - [Adding a target](docs/adding-a-target.md) (partial)
 - [Planning in beads](docs/planning-in-beads.md)
+- [Proto compatibility rules](docs/proto-compatibility.md) (in progress)
 - Wiki source, in [`docs/wiki/`](docs/wiki/README.md): [Home](docs/wiki/Home.md), [Getting started](docs/wiki/Getting-Started.md), [Architecture](docs/wiki/Architecture.md), [Platform macros](docs/wiki/Platform-Macros.md), [Packaging rule](docs/wiki/Packaging-Rule.md), [Adding a target](docs/wiki/Adding-a-Target.md), [Roadmap](docs/wiki/Roadmap.md), [Findings and gotchas](docs/wiki/Findings-and-Gotchas.md), [Glossary](docs/wiki/Glossary.md)
 
 ## License
