@@ -1,0 +1,47 @@
+# Throwaway fixtures proving analytics_package and make_tarball work before real
+# product targets exist. Plain rules_* loads on purpose.
+load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+load("@rules_python//python:py_binary.bzl", "py_binary")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+load("//tools/build_defs:package.bzl", "analytics_package")
+
+cc_binary(
+    name = "hello_cc",
+    srcs = ["hello.cc"],
+)
+
+py_binary(
+    name = "hello_py",
+    srcs = ["hello.py"],
+    main = "hello.py",
+)
+
+genrule(
+    name = "gen_txt",
+    outs = ["gen.txt"],
+    cmd = "echo generated > $@",
+)
+
+analytics_package(
+    name = "pkg_base",
+    components = {
+        ":hello_cc": "engine",
+        ":hello_py": "cli",
+    },
+)
+
+# Nests pkg_base and adds a genrule output.
+analytics_package(
+    name = "pkg_nested",
+    components = {":gen_txt": "data"},
+    deps = [":pkg_base"],
+)
+
+sh_test(
+    name = "package_rule_test",
+    srcs = ["package_rule_test.sh"],
+    data = [
+        ":pkg_base",
+        ":pkg_nested",
+    ],
+)
