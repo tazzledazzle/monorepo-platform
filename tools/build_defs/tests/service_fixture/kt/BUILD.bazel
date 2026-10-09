@@ -1,0 +1,13 @@
+load("//tools/build_defs:service.bzl", "analytics_grpc_service")
+
+analytics_grpc_service(
+    name = "svc",
+    lang = "kt",
+    team = "platform",
+    srcs = glob(["src/main/kotlin/**/*.kt"]),
+    test_srcs = glob(["src/test/kotlin/**/*.kt"]),
+    protos = ["//tools/build_defs/tests/proto_fixture/service"],
+    main = "fixture.MainKt",
+    test_class = "fixture.SvcTest",
+    visibility = ["//tools/build_defs/tests/service_fixture:__subpackages__"],
+)

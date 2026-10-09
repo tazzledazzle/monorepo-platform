@@ -27,7 +27,7 @@ Planning lives in the [beads](docs/planning-in-beads.md) tracker: 17 phases in 4
 |---|---|---|---|
 | 1 | M1 | Bootstrap, pinned dependencies, gRPC codegen spike for five languages | Done |
 | 2 | M1 | Platform layer: 15 `analytics_*` wrapper macros, `analytics_package` rule | Done |
-| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files, compatibility rules (`docs/proto-compatibility.md`) and the `analytics_proto` macro are done, and `//proto/...` builds for C++, Java, Go and Python; `analytics_grpc_service` is not built yet |
+| 3 | M1 | Proto schema (`analytics.v1`), `analytics_proto` and `analytics_grpc_service` macros | In progress: `.proto` files, compatibility rules (`docs/proto-compatibility.md`) and the `analytics_proto` macro are done, and `//proto/...` builds for C++, Java, Go and Python; `analytics_grpc_service` is built (`tools/build_defs/service.bzl`, cc and kt, tested by `//tools/build_defs/tests/service_fixture/...`) |
 | 4 | M1 | C++ query engine | Planned |
 | 5 | M1 | JVM services: Java catalog, Kotlin gateway | Planned |
 | 6 | M1 | Go ingest agent, Python report CLI | Planned |

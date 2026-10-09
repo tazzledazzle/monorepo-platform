@@ -92,4 +92,17 @@ The C++, Java, Python, and `go_binary` wrappers list attributes explicitly. If y
 
 ## Not yet available
 
-`analytics_proto` is built and generates stubs for four languages (see `proto/analytics/v1/BUILD.bazel`); `analytics_grpc_service` (Phase 3) will cover proto-backed services.
+`analytics_proto` is built and generates stubs for four languages (see `proto/analytics/v1/BUILD.bazel`); `analytics_grpc_service` covers proto-backed services. A real Kotlin example from `tools/build_defs/tests/service_fixture/kt/BUILD.bazel`:
+
+```python
+analytics_grpc_service(
+    name = "svc",
+    lang = "kt",                      # "cc" or "kt"
+    team = "platform",
+    srcs = glob(["src/main/kotlin/**/*.kt"]),
+    test_srcs = glob(["src/test/kotlin/**/*.kt"]),
+    protos = ["//tools/build_defs/tests/proto_fixture/service"],  # the analytics_proto name, not a generated target
+    main = "fixture.MainKt",          # kt: main class; cc: the file with main()
+)
+# -> :svc_lib, :svc (binary), :svc_test.  Run: bazel test //path:svc_test
+```

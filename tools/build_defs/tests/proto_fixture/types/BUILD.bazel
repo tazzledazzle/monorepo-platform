@@ -4,5 +4,8 @@ analytics_proto(
     name = "types",
     srcs = ["types.proto"],
     team = "platform",
-    visibility = ["//tools/build_defs/tests/proto_fixture:__subpackages__"],
+    visibility = [
+        "//tools/build_defs/tests/proto_fixture:__subpackages__",
+        "//tools/build_defs/tests/service_fixture:__subpackages__",
+    ],
 )

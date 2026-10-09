@@ -1,0 +1,16 @@
+load("//tools/build_defs:service.bzl", "analytics_grpc_service")
+
+analytics_grpc_service(
+    name = "svc",
+    lang = "cc",
+    team = "platform",
+    srcs = [
+        "main.cc",  # dropped from the library by the macro, compiled into the binary
+        "svc.cc",
+        "svc.h",
+    ],
+    test_srcs = ["svc_test.cc"],
+    protos = ["//tools/build_defs/tests/proto_fixture/service"],
+    main = "main.cc",
+    visibility = ["//tools/build_defs/tests/service_fixture:__subpackages__"],
+)
