@@ -4,18 +4,18 @@ load("//tools/build_defs:service.bzl", "analytics_grpc_service")
 # Targets: :engine_lib, :engine (binary, `--port=0` prints `LISTENING <port>`), :engine_test.
 analytics_grpc_service(
     name = "engine",
-    lang = "cc",
-    main = "main.cc",
-    protos = [
-        "//proto/analytics/v1:ingest",
-        "//proto/analytics/v1:query",
-    ],
     srcs = [
         "dataset_store.cc",
         "dataset_store.h",
         "engine_service.cc",
         "engine_service.h",
         "main.cc",  # dropped from the library by the macro, compiled into the binary
+    ],
+    lang = "cc",
+    main = "main.cc",
+    protos = [
+        "//proto/analytics/v1:ingest",
+        "//proto/analytics/v1:query",
     ],
     team = "engine",
     test_srcs = ["engine_service_test.cc"],

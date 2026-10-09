@@ -3,6 +3,18 @@ load("@gazelle//:def.bzl", "gazelle")  # pulls the gazelle macro from gazelle MO
 
 # gazelle:prefix example.com/three_languages_one_workspace
 # gazelle:exclude bazel-*
+# Fixtures under tools/ and tests/ are hand-written on purpose.
+# gazelle:exclude tools
+# gazelle:exclude tests
+# analytics_proto owns proto rules and their generated Go code; Gazelle only maps imports.
+# gazelle:proto disable_global
+# gazelle:resolve go example.com/three_languages_one_workspace/proto/analytics/v1/commonpb //proto/analytics/v1:common_go_grpc
+# gazelle:resolve go example.com/three_languages_one_workspace/proto/analytics/v1/ingestpb //proto/analytics/v1:ingest_go_grpc
+# gazelle:resolve go example.com/three_languages_one_workspace/proto/analytics/v1/querypb //proto/analytics/v1:query_go_grpc
+# gazelle:resolve go example.com/three_languages_one_workspace/proto/analytics/v1/catalogpb //proto/analytics/v1:catalog_go_grpc
+# gazelle:map_kind go_library analytics_go_library //tools/build_defs:go.bzl
+# gazelle:map_kind go_binary analytics_go_binary //tools/build_defs:go.bzl
+# gazelle:map_kind go_test analytics_go_test //tools/build_defs:go.bzl
 
 # Defines the //:gazelle target that `bazel run //:gazelle` looks for
 gazelle(name = "gazelle")
