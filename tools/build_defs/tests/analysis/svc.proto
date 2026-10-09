@@ -1,0 +1,4 @@
+syntax = "proto3";
+package analysis.subj;
+message Ping {}
+service Svc { rpc Do(Ping) returns (Ping); }

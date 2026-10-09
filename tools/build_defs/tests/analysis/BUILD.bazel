@@ -1,0 +1,329 @@
+# Analysis tests for the analytics_* macros and analytics_package. Subjects are tagged
+# `manual` so they are only analysed (never built) by the tests below.
+load("//tools/build_defs:cc.bzl", "analytics_cc_library", "analytics_cc_test")
+load("//tools/build_defs:go.bzl", "analytics_go_library", "analytics_go_test")
+load("//tools/build_defs:java.bzl", "analytics_java_test")
+load("//tools/build_defs:kt.bzl", "analytics_kt_library", "analytics_kt_test")
+load("//tools/build_defs:package.bzl", "analytics_package")
+load("//tools/build_defs:proto.bzl", "analytics_proto")
+load("//tools/build_defs:py.bzl", "analytics_py_test")
+load("//tools/build_defs:service.bzl", "analytics_grpc_service")
+load(":checks.bzl", "assert_rules_exist", "attr_test", "package_test")
+
+_MANUAL = ["manual"]
+
+_WARN = "-Wall,-Wextra,-Werror"
+
+# --- (a) cc ---------------------------------------------------------------------------
+analytics_cc_library(
+    name = "cc_lib",
+    srcs = ["lib.cc"],
+    hdrs = ["lib.h"],
+    copts = ["-DFROM_BUILD_FILE"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+analytics_cc_test(
+    name = "cc_test",
+    srcs = ["t_test.cc"],
+    tags = _MANUAL,
+    team = "platform",
+    deps = [":cc_lib"],
+)
+
+attr_test(
+    name = "cc_library_warnings_test",
+    expect_list_attrs = {"copts": _WARN + ",-DFROM_BUILD_FILE"},  # policy flags + caller's own copts
+    expect_tags = ["team:platform"],
+    target_under_test = ":cc_lib",
+)
+
+attr_test(
+    name = "cc_test_gtest_and_defaults_test",
+    expect_deps = [
+        "@googletest//:gtest_main",
+        ":cc_lib",
+    ],
+    expect_list_attrs = {"copts": _WARN},
+    expect_tags = ["team:platform"],
+    expect_values = {"size": "small"},
+    target_under_test = ":cc_test",
+)
+
+# --- (b) java / kotlin ----------------------------------------------------------------
+analytics_java_test(
+    name = "SubjTest",
+    srcs = ["src/test/java/subj/SubjTest.java"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+attr_test(
+    name = "java_test_junit_and_class_test",
+    expect_deps = ["@maven//:junit_junit"],
+    expect_list_attrs = {"javacopts": "-Xlint:all,-Werror"},
+    expect_tags = ["team:platform"],
+    expect_values = {
+        "test_class": "subj.SubjTest",
+        "size": "small",
+    },
+    target_under_test = ":SubjTest",
+)
+
+analytics_java_test(
+    name = "ExplicitTest",
+    srcs = ["J.java"],
+    tags = _MANUAL,
+    team = "platform",
+    test_class = "explicit.Chosen",
+)
+
+attr_test(
+    name = "java_test_explicit_class_wins_test",
+    expect_values = {"test_class": "explicit.Chosen"},
+    target_under_test = ":ExplicitTest",
+)
+
+analytics_kt_library(
+    name = "kt_lib",
+    srcs = ["K.kt"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+analytics_kt_test(
+    name = "KtSubjTest",
+    srcs = ["src/test/kotlin/subj/KtSubjTest.kt"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+attr_test(
+    name = "kt_library_warn_error_test",
+    expect_kotlinc_warn = "error",
+    expect_tags = ["team:platform"],
+    target_under_test = ":kt_lib",
+)
+
+attr_test(
+    name = "kt_test_warn_junit_class_test",
+    expect_deps = ["@maven//:junit_junit"],
+    expect_kotlinc_warn = "error",
+    expect_tags = ["team:platform"],
+    expect_values = {
+        "test_class": "subj.KtSubjTest",
+        "size": "small",
+    },
+    target_under_test = ":KtSubjTest",
+)
+
+# --- (c) python -----------------------------------------------------------------------
+analytics_py_test(
+    name = "py_test",
+    srcs = ["p_test.py"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+attr_test(
+    name = "py_test_pytest_shim_test",
+    expect_deps = ["@pip//pytest"],
+    expect_main = "//tools/build_defs:pytest_main.py",
+    expect_tags = ["team:platform"],
+    expect_values = {"size": "small"},
+    target_under_test = ":py_test",
+)
+
+# --- (d) go ---------------------------------------------------------------------------
+analytics_go_library(
+    name = "go_lib",
+    srcs = ["g.go"],
+    importpath = "example.com/analysis/go_lib",
+    tags = _MANUAL,
+    team = "platform",
+)
+
+analytics_go_test(
+    name = "go_lib_test",
+    srcs = ["g.go"],
+    embed = [":go_lib"],
+    tags = _MANUAL,
+    team = "platform",
+)
+
+attr_test(
+    name = "go_library_team_tag_test",
+    expect_tags = ["team:platform"],
+    target_under_test = ":go_lib",
+)
+
+attr_test(
+    name = "go_test_team_tag_and_size_test",
+    expect_tags = ["team:platform"],
+    expect_values = {"size": "small"},
+    target_under_test = ":go_lib_test",
+)
+
+# --- (f) analytics_grpc_service -------------------------------------------------------
+analytics_proto(
+    name = "subj",
+    srcs = ["svc.proto"],
+    team = "platform",
+)
+
+analytics_grpc_service(
+    name = "cc_svc",
+    srcs = [
+        "main.cc",  # dropped from the library, compiled into the binary
+        "svc.cc",
+        "svc.h",
+    ],
+    lang = "cc",
+    main = "main.cc",
+    protos = [":subj"],
+    tags = _MANUAL,
+    team = "platform",
+    test_srcs = ["svc_test.cc"],
+)
+
+attr_test(
+    name = "grpc_cc_lib_test",
+    expect_deps = [
+        ":subj_cc_grpc",
+        "@grpc//:grpc++",
+    ],
+    expect_tags = ["team:platform"],
+    target_under_test = ":cc_svc_lib",
+)
+
+attr_test(
+    name = "grpc_cc_binary_test",
+    expect_deps = [":cc_svc_lib"],
+    expect_tags = ["team:platform"],
+    target_under_test = ":cc_svc",
+)
+
+# `<name>_test` is private to the macro, so it is checked at load time rather than by an
+# analysistest (see assert_rules_exist).
+assert_rules_exist(
+    name = "cc_svc_test_check",
+    expect = {
+        "cc_svc_test": {
+            "kind": "cc_test",
+            "deps": [
+                ":cc_svc_lib",
+                "//:gtest_main",
+            ],
+            "size": "small",
+            "tags": ["team:platform"],
+        },
+    },
+)
+
+analytics_grpc_service(
+    name = "kt_svc",
+    srcs = ["K.kt"],
+    lang = "kt",
+    main = "subj.MainKt",
+    protos = [":subj"],
+    tags = _MANUAL,
+    team = "platform",
+    test_class = "subj.KtSvcTest",
+    test_srcs = ["src/test/kotlin/subj/KtSubjTest.kt"],
+)
+
+attr_test(
+    name = "grpc_kt_lib_test",
+    expect_deps = [":subj_java_grpc"],
+    expect_kotlinc_warn = "error",
+    expect_tags = ["team:platform"],
+    target_under_test = ":kt_svc_lib",
+)
+
+attr_test(
+    name = "grpc_kt_binary_test",
+    expect_kotlinc_warn = "error",
+    expect_tags = ["team:platform"],
+    expect_values = {"main_class": "subj.MainKt"},
+    target_under_test = ":kt_svc",
+)
+
+assert_rules_exist(
+    name = "kt_svc_test_check",
+    expect = {
+        "kt_svc_test": {
+            "kind": "kt_jvm_test",
+            "deps": [
+                ":kt_svc_lib",
+                "//:junit_junit",
+            ],
+            "size": "small",
+            "test_class": "subj.KtSvcTest",
+            "tags": ["team:platform"],
+        },
+    },
+)
+
+# --- (g) analytics_package ------------------------------------------------------------
+analytics_package(
+    name = "pkg_base",
+    components = {"a.txt": "d1"},
+    tags = _MANUAL,
+)
+
+analytics_package(
+    name = "pkg_nested",
+    components = {"b.txt": "d2/"},  # trailing slash is normalised
+    tags = _MANUAL,
+    deps = [":pkg_base"],
+)
+
+package_test(
+    name = "package_provider_test",
+    expect_labels = {"d1/tools/build_defs/tests/analysis/a.txt": "@@//tools/build_defs/tests/analysis:a.txt"},
+    expect_outputs = [
+        "pkg_base.MANIFEST.json",
+        "pkg_base.tar",
+    ],
+    expect_paths = ["d1/tools/build_defs/tests/analysis/a.txt"],
+    target_under_test = ":pkg_base",
+)
+
+package_test(
+    name = "package_nesting_test",
+    expect_labels = {
+        "d1/tools/build_defs/tests/analysis/a.txt": "@@//tools/build_defs/tests/analysis:a.txt",
+        "d2/tools/build_defs/tests/analysis/b.txt": "@@//tools/build_defs/tests/analysis:b.txt",
+    },
+    expect_outputs = [
+        "pkg_nested.MANIFEST.json",
+        "pkg_nested.tar",
+    ],
+    expect_paths = [
+        "d1/tools/build_defs/tests/analysis/a.txt",
+        "d2/tools/build_defs/tests/analysis/b.txt",
+    ],
+    target_under_test = ":pkg_nested",
+)
+
+test_suite(
+    name = "all_tests",
+    tests = [
+        ":cc_library_warnings_test",
+        ":cc_test_gtest_and_defaults_test",
+        ":go_library_team_tag_test",
+        ":go_test_team_tag_and_size_test",
+        ":grpc_cc_binary_test",
+        ":grpc_cc_lib_test",
+        ":grpc_kt_binary_test",
+        ":grpc_kt_lib_test",
+        ":java_test_explicit_class_wins_test",
+        ":java_test_junit_and_class_test",
+        ":kt_library_warn_error_test",
+        ":kt_test_warn_junit_class_test",
+        ":package_nesting_test",
+        ":package_provider_test",
+        ":py_test_pytest_shim_test",
+    ],
+)
