@@ -7,7 +7,8 @@ expands to (all carry the `team:<team>` tag and the macro's `visibility`):
 
   <name>_proto      proto_library
   <name>_cc_grpc    cc_proto_library + cc_grpc_library(grpc_only = True)     (+ private <name>_cc_proto, see _impl)
-  <name>_java_grpc  java_proto_library + java_grpc_library                   (+ private <name>_java_proto)
+  <name>_java_grpc  java_library re-exporting java_grpc_library stubs, the messages and deps' java targets
+                    (+ private <name>_java_proto, <name>_java_grpc_stubs)
   <name>_go_grpc    go_proto_library with BOTH go_proto and go_grpc_v2
   <name>_py_grpc    py_proto_library + py_grpc_library                       (+ private <name>_py_proto)
 
@@ -40,6 +41,7 @@ load("@protobuf//bazel:proto_library.bzl", "proto_library")
 load("@protobuf//bazel:py_proto_library.bzl", "py_proto_library")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 load("@rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_java//java:java_library.bzl", "java_library")
 load(":common.bzl", "TEAM_ATTRS", "team_tags")
 
 _GO_MODULE = "example.com/three_languages_one_workspace"
@@ -87,9 +89,20 @@ def _impl(name, visibility, team, srcs, deps, importpath, strip_import_prefix, t
     # Java
     java_proto_library(name = name + "_java_proto", deps = [proto], tags = tags, visibility = ["//visibility:private"])
     java_grpc_library(
-        name = name + "_java_grpc",
+        name = name + "_java_grpc_stubs",
         srcs = [proto],
         deps = [":" + name + "_java_proto"],
+        tags = tags,
+        visibility = ["//visibility:private"],
+    )
+
+    # The public Java target re-exports the stubs, the messages, and the dep protos' targets.
+    # java_grpc_library alone does not export the message classes, so javac strict-deps rejects
+    # a consumer that uses e.g. `Schema` ("from an indirect dependency").
+    java_library(
+        name = name + "_java_grpc",
+        exports = [":" + name + "_java_grpc_stubs", ":" + name + "_java_proto"] +
+                  [_sibling(d, "_java_grpc") for d in deps],
         **common
     )
 

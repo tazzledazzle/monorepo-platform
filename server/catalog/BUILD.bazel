@@ -1,0 +1,23 @@
+load("//tools/build_defs:java.bzl", "analytics_java_library", "analytics_java_test")
+
+analytics_java_library(
+    name = "catalog",
+    srcs = ["src/main/java/analytics/catalog/Catalog.java"],
+    team = "server",
+    visibility = ["//server:__subpackages__"],
+    deps = [
+        "//proto/analytics/v1:catalog_java_grpc",
+        "//proto/analytics/v1:common_java_grpc",
+    ],
+)
+
+analytics_java_test(
+    name = "CatalogTest",
+    srcs = ["src/test/java/analytics/catalog/CatalogTest.java"],
+    team = "server",
+    deps = [
+        ":catalog",
+        "//proto/analytics/v1:catalog_java_grpc",
+        "//proto/analytics/v1:common_java_grpc",
+    ],
+)
