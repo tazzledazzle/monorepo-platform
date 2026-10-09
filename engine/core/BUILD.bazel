@@ -1,0 +1,31 @@
+load("//tools/build_defs:cc.bzl", "analytics_cc_library", "analytics_cc_test")
+
+# Pure C++ engine: no proto, no gRPC. Only //engine/... may depend on it.
+analytics_cc_library(
+    name = "core",
+    srcs = [
+        "aggregate.cc",
+        "table.cc",
+    ],
+    hdrs = [
+        "aggregate.h",
+        "status.h",
+        "table.h",
+    ],
+    team = "engine",
+    visibility = ["//engine:__subpackages__"],
+)
+
+analytics_cc_test(
+    name = "table_test",
+    srcs = ["table_test.cc"],
+    team = "engine",
+    deps = [":core"],
+)
+
+analytics_cc_test(
+    name = "aggregate_test",
+    srcs = ["aggregate_test.cc"],
+    team = "engine",
+    deps = [":core"],
+)
