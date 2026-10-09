@@ -1,0 +1,23 @@
+load("//tools/build_defs:java.bzl", "analytics_java_library", "analytics_java_test")
+
+analytics_java_library(
+    name = "lib",
+    srcs = ["src/main/java/sample/Greeter.java"],
+    team = "platform",
+)
+
+# test_class is derived: GreeterTest.java under src/test/java/ -> sample.GreeterTest
+analytics_java_test(
+    name = "GreeterTest",
+    srcs = ["src/test/java/sample/GreeterTest.java"],
+    team = "platform",
+    deps = [":lib"],
+)
+
+# Must FAIL to build (-Xlint:all -Werror: rawtypes).
+analytics_java_library(
+    name = "lints",
+    srcs = ["src/main/java/sample/Lints.java"],
+    tags = ["manual"],
+    team = "platform",
+)

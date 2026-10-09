@@ -1,0 +1,23 @@
+load("//tools/build_defs:cc.bzl", "analytics_cc_library", "analytics_cc_test")
+
+analytics_cc_library(
+    name = "lib",
+    srcs = ["lib.cc"],
+    hdrs = ["lib.h"],
+    team = "platform",
+)
+
+analytics_cc_test(
+    name = "lib_test",
+    srcs = ["lib_test.cc"],
+    team = "platform",
+    deps = [":lib"],
+)
+
+# Must FAIL to build (-Werror); kept out of //... via `manual`.
+analytics_cc_library(
+    name = "warns",
+    srcs = ["warns.cc"],
+    tags = ["manual"],
+    team = "platform",
+)
