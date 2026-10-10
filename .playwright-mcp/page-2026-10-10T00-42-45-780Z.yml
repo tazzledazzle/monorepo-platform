@@ -1,0 +1,72 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e6]:
+    - link [ref=f1e8] [cursor=pointer]:
+      - /url: /
+    - img [aria-hidden] [ref=f1e11] [cursor=pointer]
+  - generic [ref=f1e12]:
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: Quickstart
+      - text: To get started, select options below then copy the results to your .bazelrc file.If you don't have a .bazelrc file - create one in the same directory as your Bazel WORKSPACE file.
+      - heading "1. Configure your .bazelrc" [level=2] [ref=f1e17]
+      - generic [ref=f1e18]:
+        - generic [ref=f1e19]: Select options
+        - generic [ref=f1e20]:
+          - generic [ref=f1e22]:
+            - checkbox "Enable cache" [ref=f1e23] [cursor=pointer]
+            - generic [ref=f1e24] [cursor=pointer]: Enable cache
+          - generic [ref=f1e26]:
+            - checkbox "Enable remote execution" [ref=f1e27] [cursor=pointer]
+            - generic [ref=f1e28] [cursor=pointer]: Enable remote execution
+        - generic [ref=f1e29]:
+          - text: To create a new API key, see
+          - link "Settings" [ref=f1e30] [cursor=pointer]:
+            - /url: /settings/org/api-keys
+          - text: .
+        - text: Copy to your .bazelrc
+        - code [ref=f1e31]:
+          - text: .bazelrc
+          - generic [ref=f1e32]:
+            - generic [ref=f1e33]: build --bes_results_url=http://localhost:8080/invocation/
+            - generic [ref=f1e34]: build --bes_backend=grpc://localhost:1985
+          - button "Copy" [ref=f1e35] [cursor=pointer]
+      - heading "2. Verify your installation" [level=2] [ref=f1e36]
+      - text: "Once you've added those lines to your .bazelrc, kick off a bazel build.You'll get a BuildBuddy URL printed at the beginning and the end of every Bazel invocation like this:"
+      - code [ref=f1e37]: "bazel build //...INFO: Streaming build results to: http://localhost:8080/invocation/7bedd84e-525e-4b93-a5f5-53517d57752b..."
+      - text: Now you can ⌘ click / double click on these urls to see the results of your build!
+      - generic [ref=f1e38]:
+        - heading "Enterprise BuildBuddy" [level=2] [ref=f1e39]
+        - text: Want enterprise features like SSO, organization build history, trends, remote build execution and more?
+        - link "Click here" [ref=f1e41] [cursor=pointer]:
+          - /url: https://buildbuddy.typeform.com/to/wIXFIA
+        - text: to upgrade to enterprise BuildBuddy.
+      - heading "Documentation" [level=2] [ref=f1e42]
+      - text: Visit our
+      - link "documentation" [ref=f1e43] [cursor=pointer]:
+        - /url: https://www.buildbuddy.io/docs/introduction
+      - text: for more information on setting up, configuring, and using BuildBuddy.
+      - heading "Get in touch!" [level=2] [ref=f1e44]
+      - text: Join our
+      - link "Slack channel" [ref=f1e45] [cursor=pointer]:
+        - /url: https://community.buildbuddy.io
+      - text: or email us at
+      - link "hello@buildbuddy.io" [ref=f1e46] [cursor=pointer]:
+        - /url: mailto:hello@buildbuddy.io
+      - text: if you have any questions or feature requests!
+    - generic [ref=f1e47]:
+      - generic [ref=f1e48]: © 2026 Iteration, Inc.
+      - link "Terms" [ref=f1e49] [cursor=pointer]:
+        - /url: https://buildbuddy.io/terms
+      - link "Privacy" [ref=f1e50] [cursor=pointer]:
+        - /url: https://buildbuddy.io/privacy
+      - link "BuildBuddy" [ref=f1e51] [cursor=pointer]:
+        - /url: https://buildbuddy.io
+      - link "v2.314.0" [ref=f1e52] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/releases/tag/v2.314.0
+      - link "Contact us" [ref=f1e53] [cursor=pointer]:
+        - /url: mailto:hello@buildbuddy.io
+      - link "Slack" [ref=f1e54] [cursor=pointer]:
+        - /url: https://community.buildbuddy.io
+      - link "Twitter" [ref=f1e55] [cursor=pointer]:
+        - /url: https://twitter.com/buildbuddy
+      - link "GitHub" [ref=f1e56] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/

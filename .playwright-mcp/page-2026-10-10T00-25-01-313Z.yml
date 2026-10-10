@@ -1,0 +1,1823 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e6]:
+    - link [ref=f1e8] [cursor=pointer]:
+      - /url: /
+    - img [aria-hidden] [ref=f1e11] [cursor=pointer]
+  - generic [ref=f1e12]:
+    - generic [ref=f1e14]:
+      - generic [ref=f1e26]:
+        - generic [ref=f1e27]:
+          - generic [ref=f1e28]: Invocation d9e1ffb1-dda9-42fd-b182-ae93e674619c
+          - generic [ref=f1e30]:
+            - button "Compare" [ref=f1e32] [cursor=pointer]
+            - button "More invocation options" [ref=f1e38] [cursor=pointer]
+        - generic [ref=f1e43]:
+          - generic "//tools/build_defs/..." [ref=f1e44]: terenceschumacher's test //tools/build_defs/...
+          - generic [ref=f1e45]: October 9th, 2026 at 5:24:19 pm
+        - generic [ref=f1e46]:
+          - generic [ref=f1e47]: Succeeded
+          - generic "26.343 seconds" [ref=f1e51]: 26.3s
+          - link "terenceschumacher" [ref=f1e55] [cursor=pointer]:
+            - /url: /history/user/terenceschumacher
+          - link "Terences-MacBook-Pro-2.local" [ref=f1e59] [cursor=pointer]:
+            - /url: /history/host/Terences-MacBook-Pro-2.local
+          - generic [ref=f1e62]: bazel v9.3.0 test
+          - generic "//tools/build_defs/..." [ref=f1e65]
+          - generic "40341 configured" [ref=f1e71]: 109 targets
+          - generic "12502 created" [ref=f1e76]: 8,225 actions
+          - generic [ref=f1e79]: 576 packages
+          - link "0 fetches" [ref=f1e83] [cursor=pointer]:
+            - /url: "#fetches"
+          - generic [ref=f1e88]: aarch64
+          - generic [ref=f1e92]: fastbuild
+          - link "local-spike" [ref=f1e95] [cursor=pointer]:
+            - /url: /history/repo/aHR0cHM6Ly9sb2NhbC1zcGlrZQ==
+          - link "main" [ref=f1e99] [cursor=pointer]:
+            - /url: /history/branch/main
+          - link "327591" [ref=f1e104] [cursor=pointer]:
+            - /url: /history/commit/3275918
+          - link "Cache on" [ref=f1e107] [cursor=pointer]:
+            - /url: /docs/setup/
+          - link "Remote execution off" [ref=f1e112] [cursor=pointer]:
+            - /url: /docs/setup/
+      - generic [ref=f1e115]:
+        - generic [ref=f1e116]:
+          - link "All" [ref=f1e117] [cursor=pointer]:
+            - /url: "#"
+          - link "Targets" [ref=f1e118] [cursor=pointer]:
+            - /url: "#targets"
+          - link "Logs" [ref=f1e119] [cursor=pointer]:
+            - /url: "#log"
+          - link "Details" [ref=f1e120] [cursor=pointer]:
+            - /url: "#details"
+          - link "Artifacts" [ref=f1e121] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Timing" [ref=f1e122] [cursor=pointer]:
+            - /url: "#timing"
+          - link "Cache" [ref=f1e123] [cursor=pointer]:
+            - /url: "#cache"
+          - link "Raw" [ref=f1e124] [cursor=pointer]:
+            - /url: "#raw"
+        - generic [ref=f1e130]:
+          - generic [ref=f1e131]:
+            - generic [ref=f1e132]: Build logs
+            - generic [ref=f1e134]:
+              - generic [ref=f1e135]:
+                - textbox "Search" [ref=f1e136]
+                - generic [ref=f1e137]: No results
+              - button "Wrap" [ref=f1e139] [cursor=pointer]
+              - button "Full Screen" [ref=f1e143] [cursor=pointer]
+              - button "Copy" [ref=f1e153] [cursor=pointer]
+              - button "Download" [ref=f1e157] [cursor=pointer]
+          - generic [ref=f1e163]:
+            - generic [ref=f1e164]: //tools/build_defs/tests/analysis:grpc_cc_lib_test (cached) PASSED in 0.4s
+            - generic [ref=f1e165]: //tools/build_defs/tests/analysis:grpc_kt_binary_test (cached) PASSED in 0.4s
+            - generic [ref=f1e166]: //tools/build_defs/tests/analysis:grpc_kt_lib_test (cached) PASSED in 0.3s
+            - generic [ref=f1e167]: //tools/build_defs/tests/analysis:java_test_explicit_class_wins_test (cached) PASSED in 0.3s
+            - generic [ref=f1e168]: //tools/build_defs/tests/analysis:java_test_junit_and_class_test (cached) PASSED in 0.4s
+            - generic [ref=f1e169]: //tools/build_defs/tests/analysis:kt_library_warn_error_test (cached) PASSED in 0.3s
+            - generic [ref=f1e170]: //tools/build_defs/tests/analysis:kt_test_warn_junit_class_test (cached) PASSED in 0.2s
+            - generic [ref=f1e171]: //tools/build_defs/tests/analysis:package_nesting_test (cached) PASSED in 0.4s
+            - generic [ref=f1e172]: //tools/build_defs/tests/analysis:package_provider_test (cached) PASSED in 0.2s
+            - generic [ref=f1e173]: //tools/build_defs/tests/analysis:py_test_pytest_shim_test (cached) PASSED in 0.3s
+            - generic [ref=f1e174]: //tools/build_defs/tests/package_fixture:package_rule_test (cached) PASSED in 1.4s
+            - generic [ref=f1e175]: //tools/build_defs/tests/samples/cc:lib_test (cached) PASSED in 0.4s
+            - generic [ref=f1e176]: //tools/build_defs/tests/samples/go:g_test (cached) PASSED in 0.4s
+            - generic [ref=f1e177]: //tools/build_defs/tests/samples/java:GreeterTest (cached) PASSED in 0.5s
+            - generic [ref=f1e178]: //tools/build_defs/tests/samples/kt:GreeterTest (cached) PASSED in 0.5s
+            - generic [ref=f1e179]: //tools/build_defs/tests/samples/py:lib_test (cached) PASSED in 1.5s
+            - generic [ref=f1e180]: //tools/build_defs/tests/service_fixture/cc:svc_test (cached) PASSED in 1.3s
+            - generic [ref=f1e181]: //tools/build_defs/tests/service_fixture/kt:svc_test (cached) PASSED in 0.9s
+            - generic [ref=f1e183]: "Executed 0 out of 24 tests: 24 tests pass."
+            - generic [ref=f1e184]: There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
+        - generic [ref=f1e191]:
+          - generic [ref=f1e192]:
+            - text: 24 tests passed
+            - img [aria-hidden] [ref=f1e193] [cursor=pointer]
+          - generic [ref=f1e197]:
+            - link "//tools/build_defs/packaging:make_tarball_test Cached 2.939 seconds" [ref=f1e198] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Fpackaging%3Amake_tarball_test&targetStatus=5"
+              - generic "sh_test rule | Medium" [ref=f1e199]:
+                - generic [ref=f1e203]: //tools/build_defs/packaging:make_tarball_test
+                - generic [ref=f1e204]: Cached
+              - generic [ref=f1e205]: 2.939 seconds
+            - link "//tools/build_defs/tests/analysis:cc_library_warnings_test Cached 0.308 seconds" [ref=f1e206] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Acc_library_warnings_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e207]:
+                - generic [ref=f1e211]: //tools/build_defs/tests/analysis:cc_library_warnings_test
+                - generic [ref=f1e212]: Cached
+              - generic [ref=f1e213]: 0.308 seconds
+            - link "//tools/build_defs/tests/analysis:cc_test_gtest_and_defaults_test Cached 0.408 seconds" [ref=f1e214] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Acc_test_gtest_and_defaults_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e215]:
+                - generic [ref=f1e219]: //tools/build_defs/tests/analysis:cc_test_gtest_and_defaults_test
+                - generic [ref=f1e220]: Cached
+              - generic [ref=f1e221]: 0.408 seconds
+            - link "//tools/build_defs/tests/analysis:go_library_team_tag_test Cached 0.559 seconds" [ref=f1e222] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Ago_library_team_tag_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e223]:
+                - generic [ref=f1e227]: //tools/build_defs/tests/analysis:go_library_team_tag_test
+                - generic [ref=f1e228]: Cached
+              - generic [ref=f1e229]: 0.559 seconds
+            - link "//tools/build_defs/tests/analysis:go_test_team_tag_and_size_test Cached 0.315 seconds" [ref=f1e230] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Ago_test_team_tag_and_size_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e231]:
+                - generic [ref=f1e235]: //tools/build_defs/tests/analysis:go_test_team_tag_and_size_test
+                - generic [ref=f1e236]: Cached
+              - generic [ref=f1e237]: 0.315 seconds
+            - link "//tools/build_defs/tests/analysis:grpc_cc_binary_test Cached 0.258 seconds" [ref=f1e238] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Agrpc_cc_binary_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e239]:
+                - generic [ref=f1e243]: //tools/build_defs/tests/analysis:grpc_cc_binary_test
+                - generic [ref=f1e244]: Cached
+              - generic [ref=f1e245]: 0.258 seconds
+            - link "//tools/build_defs/tests/analysis:grpc_cc_lib_test Cached 0.433 seconds" [ref=f1e246] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Agrpc_cc_lib_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e247]:
+                - generic [ref=f1e251]: //tools/build_defs/tests/analysis:grpc_cc_lib_test
+                - generic [ref=f1e252]: Cached
+              - generic [ref=f1e253]: 0.433 seconds
+            - link "//tools/build_defs/tests/analysis:grpc_kt_binary_test Cached 0.378 seconds" [ref=f1e254] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Agrpc_kt_binary_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e255]:
+                - generic [ref=f1e259]: //tools/build_defs/tests/analysis:grpc_kt_binary_test
+                - generic [ref=f1e260]: Cached
+              - generic [ref=f1e261]: 0.378 seconds
+            - link "//tools/build_defs/tests/analysis:grpc_kt_lib_test Cached 0.251 seconds" [ref=f1e262] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Agrpc_kt_lib_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e263]:
+                - generic [ref=f1e267]: //tools/build_defs/tests/analysis:grpc_kt_lib_test
+                - generic [ref=f1e268]: Cached
+              - generic [ref=f1e269]: 0.251 seconds
+            - link "//tools/build_defs/tests/analysis:java_test_explicit_class_wins_test Cached 0.279 seconds" [ref=f1e270] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Ajava_test_explicit_class_wins_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e271]:
+                - generic [ref=f1e275]: //tools/build_defs/tests/analysis:java_test_explicit_class_wins_test
+                - generic [ref=f1e276]: Cached
+              - generic [ref=f1e277]: 0.279 seconds
+            - link "//tools/build_defs/tests/analysis:java_test_junit_and_class_test Cached 0.366 seconds" [ref=f1e278] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Ajava_test_junit_and_class_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e279]:
+                - generic [ref=f1e283]: //tools/build_defs/tests/analysis:java_test_junit_and_class_test
+                - generic [ref=f1e284]: Cached
+              - generic [ref=f1e285]: 0.366 seconds
+            - link "//tools/build_defs/tests/analysis:kt_library_warn_error_test Cached 0.294 seconds" [ref=f1e286] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Akt_library_warn_error_test&targetStatus=5"
+              - generic "attr_test rule | Medium" [ref=f1e287]:
+                - generic [ref=f1e291]: //tools/build_defs/tests/analysis:kt_library_warn_error_test
+                - generic [ref=f1e292]: Cached
+              - generic [ref=f1e293]: 0.294 seconds
+          - generic [ref=f1e294]:
+            - generic [ref=f1e295] [cursor=pointer]: Load more passing tests
+            - generic [ref=f1e298] [cursor=pointer]: Load all passing tests
+        - generic [ref=f1e307]:
+          - generic [ref=f1e308]:
+            - text: 109 targets built successfully
+            - img [aria-hidden] [ref=f1e309] [cursor=pointer]
+          - generic [ref=f1e313]:
+            - link "//tools/build_defs/legacy/sample:legacy_lib 0.686 seconds" [ref=f1e314] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Flegacy%2Fsample%3Alegacy_lib&targetStatus=2"
+              - generic "cc_library rule" [ref=f1e315]: //tools/build_defs/legacy/sample:legacy_lib
+              - generic [ref=f1e320]: 0.686 seconds
+            - link "//tools/build_defs/legacy/sample:legacy_lib_hdrs 0.085 seconds" [ref=f1e321] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Flegacy%2Fsample%3Alegacy_lib_hdrs&targetStatus=2"
+              - generic "filegroup rule" [ref=f1e322]: //tools/build_defs/legacy/sample:legacy_lib_hdrs
+              - generic [ref=f1e327]: 0.085 seconds
+            - link "//tools/build_defs/legacy/sample:modern_lib 1.105 seconds" [ref=f1e328] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Flegacy%2Fsample%3Amodern_lib&targetStatus=2"
+              - generic "cc_library rule" [ref=f1e329]: //tools/build_defs/legacy/sample:modern_lib
+              - generic [ref=f1e334]: 1.105 seconds
+            - link "//tools/build_defs/packaging:make_tarball 1.075 seconds" [ref=f1e335] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Fpackaging%3Amake_tarball&targetStatus=2"
+              - generic "py_binary rule" [ref=f1e336]: //tools/build_defs/packaging:make_tarball
+              - generic [ref=f1e341]: 1.075 seconds
+            - link "//tools/build_defs/tests/analysis:KtSubjTest_kotlinc_opts 0.049 seconds" [ref=f1e342] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3AKtSubjTest_kotlinc_opts&targetStatus=2"
+              - generic "kt_kotlinc_options rule" [ref=f1e343]: //tools/build_defs/tests/analysis:KtSubjTest_kotlinc_opts
+              - generic [ref=f1e348]: 0.049 seconds
+            - link "//tools/build_defs/tests/analysis:kt_lib_kotlinc_opts 0.002 seconds" [ref=f1e349] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Akt_lib_kotlinc_opts&targetStatus=2"
+              - generic "kt_kotlinc_options rule" [ref=f1e350]: //tools/build_defs/tests/analysis:kt_lib_kotlinc_opts
+              - generic [ref=f1e355]: 0.002 seconds
+            - link "//tools/build_defs/tests/analysis:kt_svc_kotlinc_opts 0.001 seconds" [ref=f1e356] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Akt_svc_kotlinc_opts&targetStatus=2"
+              - generic "kt_kotlinc_options rule" [ref=f1e357]: //tools/build_defs/tests/analysis:kt_svc_kotlinc_opts
+              - generic [ref=f1e362]: 0.001 seconds
+            - link "//tools/build_defs/tests/analysis:kt_svc_lib_kotlinc_opts 0.007 seconds" [ref=f1e363] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Akt_svc_lib_kotlinc_opts&targetStatus=2"
+              - generic "kt_kotlinc_options rule" [ref=f1e364]: //tools/build_defs/tests/analysis:kt_svc_lib_kotlinc_opts
+              - generic [ref=f1e369]: 0.007 seconds
+            - link "//tools/build_defs/tests/analysis:kt_svc_test_kotlinc_opts 0.006 seconds" [ref=f1e370] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Akt_svc_test_kotlinc_opts&targetStatus=2"
+              - generic "kt_kotlinc_options rule" [ref=f1e371]: //tools/build_defs/tests/analysis:kt_svc_test_kotlinc_opts
+              - generic [ref=f1e376]: 0.006 seconds
+            - link "//tools/build_defs/tests/analysis:subj_cc_grpc 11.684 seconds" [ref=f1e377] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Asubj_cc_grpc&targetStatus=2"
+              - generic "cc_library rule" [ref=f1e378]: //tools/build_defs/tests/analysis:subj_cc_grpc
+              - generic [ref=f1e383]: 11.684 seconds
+            - link "//tools/build_defs/tests/analysis:subj_cc_grpc_codegen 8.932 seconds" [ref=f1e384] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Asubj_cc_grpc_codegen&targetStatus=2"
+              - generic "_generate_cc rule" [ref=f1e385]: //tools/build_defs/tests/analysis:subj_cc_grpc_codegen
+              - generic [ref=f1e390]: 8.932 seconds
+            - link "//tools/build_defs/tests/analysis:subj_cc_proto 9.015 seconds" [ref=f1e391] [cursor=pointer]:
+              - /url: "?target=%2F%2Ftools%2Fbuild_defs%2Ftests%2Fanalysis%3Asubj_cc_proto&targetStatus=2"
+              - generic "cc_proto_library rule" [ref=f1e392]: //tools/build_defs/tests/analysis:subj_cc_proto
+              - generic [ref=f1e397]: 9.015 seconds
+          - generic [ref=f1e398]:
+            - generic [ref=f1e399] [cursor=pointer]: Load more targets
+            - generic [ref=f1e402] [cursor=pointer]: Load all targets
+        - generic [ref=f1e409]:
+          - generic [ref=f1e410]: Invocation details
+          - generic [ref=f1e411]:
+            - generic [ref=f1e412]:
+              - generic [ref=f1e413]: Status
+              - generic [ref=f1e414]: Succeeded
+            - generic [ref=f1e415]:
+              - generic [ref=f1e416]: Run date
+              - generic [ref=f1e417]: October 9th, 2026 at 5:24:19 pm
+            - generic [ref=f1e418]:
+              - generic [ref=f1e419]: Elapsed time
+              - generic [ref=f1e420]: 26.3s
+            - generic [ref=f1e421]:
+              - generic [ref=f1e422]: CPU time
+              - generic [ref=f1e423]: 116.729 cpu-seconds
+            - generic [ref=f1e424]:
+              - generic [ref=f1e425]: User
+              - generic [ref=f1e426]: terenceschumacher
+            - generic [ref=f1e427]:
+              - generic [ref=f1e428]: Host name
+              - generic [ref=f1e429]: Terences-MacBook-Pro-2.local
+            - generic [ref=f1e430]:
+              - generic [ref=f1e431]: Tool
+              - generic [ref=f1e432]: bazel v9.3.0 test
+            - generic [ref=f1e433]: Tool tag
+            - generic [ref=f1e436]:
+              - generic [ref=f1e437]: Pattern
+              - generic "//tools/build_defs/..." [ref=f1e438]
+            - generic [ref=f1e439]:
+              - generic [ref=f1e440]: CPU
+              - generic [ref=f1e441]: aarch64
+            - generic [ref=f1e442]:
+              - generic [ref=f1e443]: Mode
+              - generic [ref=f1e444]: fastbuild
+            - generic [ref=f1e445]:
+              - generic [ref=f1e446]: Targets
+              - generic [ref=f1e447]:
+                - text: 109 targets
+                - generic [ref=f1e448]: (40,341 configured)
+            - generic [ref=f1e449]:
+              - generic [ref=f1e450]: Actions
+              - generic [ref=f1e451]:
+                - text: 8,225 actions
+                - generic [ref=f1e452]: (12,502 created)
+            - generic [ref=f1e453]:
+              - generic [ref=f1e454]: Packages
+              - generic [ref=f1e455]: 576 packages
+            - generic [ref=f1e456]:
+              - generic [ref=f1e457]: Analysis Cache Age
+              - generic [ref=f1e458]: 1 analysis, 1 build
+            - generic [ref=f1e459]:
+              - generic [ref=f1e460]: GitHub repo
+              - link "https://local-spike" [ref=f1e462] [cursor=pointer]:
+                - /url: https://local-spike/
+            - generic [ref=f1e463]:
+              - generic [ref=f1e464]: GitHub branch
+              - link "main" [ref=f1e466] [cursor=pointer]:
+                - /url: https://local-spike/tree/main
+            - generic [ref=f1e467]:
+              - generic [ref=f1e468]: GitHub commit
+              - link "3275918" [ref=f1e470] [cursor=pointer]:
+                - /url: https://local-spike/commit/3275918
+            - generic [ref=f1e471]:
+              - generic [ref=f1e472]:
+                - text: explicit command line
+                - img [aria-hidden] [ref=f1e473] [cursor=pointer]
+              - code [ref=f1e477]: bazel test --jobs=4 -- //tools/build_defs/...
+            - generic [ref=f1e478]:
+              - generic [ref=f1e479]:
+                - text: effective command line
+                - img [aria-hidden] [ref=f1e480] [cursor=pointer]
+              - code [ref=f1e484]: bazel test --flag_alias='build_python_zip=@@rules_python+//python/config_settings:build_python_zip' --flag_alias='incompatible_default_to_explicit_init_py=@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py' --flag_alias='python_path=@@rules_python+//python/config_settings:python_path' --flag_alias='experimental_python_import_all_repositories=@@rules_python+//python/config_settings:experimental_python_import_all_repositories' --enable_platform_specific_config --cxxopt='-std=c++20' --host_cxxopt='-std=c++20' --java_language_version=17 --tool_java_language_version=17 --java_runtime_version=remotejdk_17 --tool_java_runtime_version=remotejdk_17 --bes_backend=grpc://localhost:1985 --bes_results_url=http://localhost:8080/invocation/ --bes_upload_mode=fully_async --bes_timeout=10s --remote_cache=grpc://localhost:1985 --remote_upload_local_results --remote_timeout=10s --remote_local_fallback --build_metadata=ROLE=spike --build_metadata=HOST_ARCH=arm64 --workspace_status_command=/tmp/spike-status.sh --build_metadata=COMMIT_SHA=3275918 --build_metadata=REPO_URL=local-spike --build_metadata=BRANCH_NAME=main --build_metadata=TAGS=local --build_metadata=VISIBILITY=PRIVATE --build_event_publish_all_actions --test_output=errors --jobs=4 '--@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py=true' -- //tools/build_defs/...
+            - generic [ref=f1e485]:
+              - generic [ref=f1e486]: canonical command line
+              - generic [ref=f1e487]:
+                - generic [ref=f1e488]: executable
+                - generic [ref=f1e489]: bazel
+              - generic [ref=f1e491]:
+                - generic [ref=f1e492]: startup options
+                - generic [ref=f1e493]:
+                  - generic [ref=f1e494]:
+                    - text: "--"
+                    - link "max_idle_secs" [ref=f1e495] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--max_idle_secs
+                    - text: =10800
+                  - generic [ref=f1e496]:
+                    - text: "--"
+                    - link "shutdown_on_low_sys_mem" [ref=f1e497] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--shutdown_on_low_sys_mem
+                    - text: =0
+                  - generic [ref=f1e498]:
+                    - text: "--"
+                    - link "connect_timeout_secs" [ref=f1e499] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--connect_timeout_secs
+                    - text: =30
+                  - generic [ref=f1e500]:
+                    - text: "--"
+                    - link "output_user_root" [ref=f1e501] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--output_user_root
+                    - text: =/Users/terenceschumacher/Library/Caches/bazel/_bazel_terenceschumacher
+                  - generic [ref=f1e502]:
+                    - text: "--"
+                    - link "install_base" [ref=f1e503] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--install_base
+                    - text: =/Users/terenceschumacher/Library/Caches/bazel/_bazel_terenceschumacher/install/be0838ddda638e2b0233e34df8f07b84
+                  - generic [ref=f1e504]:
+                    - text: "--"
+                    - link "install_md5" [ref=f1e505] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--install_md5
+                    - text: =be0838ddda638e2b0233e34df8f07b84
+                  - generic [ref=f1e506]:
+                    - text: "--"
+                    - link "lock_install_base" [ref=f1e507] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--lock_install_base
+                    - text: =1
+                  - generic [ref=f1e508]:
+                    - text: "--"
+                    - link "output_base" [ref=f1e509] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--output_base
+                    - text: =/private/tmp/spike-scans-ob2
+                  - generic [ref=f1e510]:
+                    - text: "--"
+                    - link "workspace_directory" [ref=f1e511] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--workspace_directory
+                    - text: =/private/tmp/spike-scans
+                  - generic [ref=f1e512]:
+                    - text: "--"
+                    - link "default_system_javabase" [ref=f1e513] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--default_system_javabase
+                    - text: =/Users/terenceschumacher/.sdkman/candidates/java/current
+                  - generic [ref=f1e514]:
+                    - text: "--"
+                    - link "failure_detail_out" [ref=f1e515] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--failure_detail_out
+                    - text: =/tmp/spike-scans-ob2/failure_detail.rawproto
+                  - generic [ref=f1e516]:
+                    - text: "--"
+                    - link "idle_server_tasks" [ref=f1e517] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--idle_server_tasks
+                    - text: =1
+                  - generic [ref=f1e518]:
+                    - text: "--"
+                    - link "write_command_log" [ref=f1e519] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--write_command_log
+                    - text: =1
+                  - generic [ref=f1e520]:
+                    - text: "--"
+                    - link "fatal_event_bus_exceptions" [ref=f1e521] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--fatal_event_bus_exceptions
+                    - text: =0
+                  - generic [ref=f1e522]:
+                    - text: "--"
+                    - link "windows_enable_symlinks" [ref=f1e523] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--windows_enable_symlinks
+                    - text: =0
+                  - generic [ref=f1e524]:
+                    - text: "--"
+                    - link "client_debug" [ref=f1e525] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_debug
+                    - text: =false
+                  - generic [ref=f1e526]:
+                    - text: "--"
+                    - link "product_name" [ref=f1e527] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--product_name
+                    - text: =Bazel
+                  - generic [ref=f1e528]:
+                    - text: "--"
+                    - link "option_sources" [ref=f1e529] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--option_sources
+                    - text: "=output_Ubase:"
+                  - generic [ref=f1e530]:
+                    - text: "--"
+                    - link "ignore_all_rc_files" [ref=f1e531] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--ignore_all_rc_files
+                    - text: =1
+              - generic [ref=f1e532]:
+                - generic [ref=f1e533]: command
+                - generic [ref=f1e534]: test
+              - generic [ref=f1e536]:
+                - generic [ref=f1e537]: command options
+                - generic [ref=f1e538]:
+                  - generic [ref=f1e539]:
+                    - text: "--"
+                    - link "flag_alias" [ref=f1e540] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--flag_alias
+                    - text: =build_python_zip=@@rules_python+//python/config_settings:build_python_zip
+                  - generic [ref=f1e541]:
+                    - text: "--"
+                    - link "flag_alias" [ref=f1e542] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--flag_alias
+                    - text: =incompatible_default_to_explicit_init_py=@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py
+                  - generic [ref=f1e543]:
+                    - text: "--"
+                    - link "flag_alias" [ref=f1e544] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--flag_alias
+                    - text: =python_path=@@rules_python+//python/config_settings:python_path
+                  - generic [ref=f1e545]:
+                    - text: "--"
+                    - link "flag_alias" [ref=f1e546] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--flag_alias
+                    - text: =experimental_python_import_all_repositories=@@rules_python+//python/config_settings:experimental_python_import_all_repositories
+                  - generic [ref=f1e547]:
+                    - text: "--"
+                    - link "isatty" [ref=f1e548] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--isatty
+                    - text: =0
+                  - generic [ref=f1e549]:
+                    - text: "--"
+                    - link "terminal_columns" [ref=f1e550] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--terminal_columns
+                    - text: =80
+                  - generic [ref=f1e551]:
+                    - text: "--"
+                    - link "enable_platform_specific_config" [ref=f1e552] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--enable_platform_specific_config
+                    - text: =1
+                  - generic [ref=f1e553]:
+                    - text: "--"
+                    - link "cxxopt" [ref=f1e554] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--cxxopt
+                    - text: =-std=c++20
+                  - generic [ref=f1e555]:
+                    - text: "--"
+                    - link "host_cxxopt" [ref=f1e556] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--host_cxxopt
+                    - text: =-std=c++20
+                  - generic [ref=f1e557]:
+                    - text: "--"
+                    - link "java_language_version" [ref=f1e558] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--java_language_version
+                    - text: =17
+                  - generic [ref=f1e559]:
+                    - text: "--"
+                    - link "tool_java_language_version" [ref=f1e560] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--tool_java_language_version
+                    - text: =17
+                  - generic [ref=f1e561]:
+                    - text: "--"
+                    - link "java_runtime_version" [ref=f1e562] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--java_runtime_version
+                    - text: =remotejdk_17
+                  - generic [ref=f1e563]:
+                    - text: "--"
+                    - link "tool_java_runtime_version" [ref=f1e564] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--tool_java_runtime_version
+                    - text: =remotejdk_17
+                  - generic [ref=f1e565]:
+                    - text: "--"
+                    - link "bes_backend" [ref=f1e566] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--bes_backend
+                    - text: =grpc://localhost:1985
+                  - generic [ref=f1e567]:
+                    - text: "--"
+                    - link "bes_results_url" [ref=f1e568] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--bes_results_url
+                    - text: =http://localhost:8080/invocation/
+                  - generic [ref=f1e569]:
+                    - text: "--"
+                    - link "bes_upload_mode" [ref=f1e570] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--bes_upload_mode
+                    - text: =fully_async
+                  - generic [ref=f1e571]:
+                    - text: "--"
+                    - link "bes_timeout" [ref=f1e572] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--bes_timeout
+                    - text: =10s
+                  - generic [ref=f1e573]:
+                    - text: "--"
+                    - link "remote_cache" [ref=f1e574] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--remote_cache
+                    - text: =grpc://localhost:1985
+                  - generic [ref=f1e575]:
+                    - text: "--"
+                    - link "remote_upload_local_results" [ref=f1e576] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--remote_upload_local_results
+                    - text: =1
+                  - generic [ref=f1e577]:
+                    - text: "--"
+                    - link "remote_timeout" [ref=f1e578] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--remote_timeout
+                    - text: =10s
+                  - generic [ref=f1e579]:
+                    - text: "--"
+                    - link "remote_local_fallback" [ref=f1e580] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--remote_local_fallback
+                    - text: =1
+                  - generic [ref=f1e581]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e582] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =ROLE=spike
+                  - generic [ref=f1e583]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e584] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =HOST_ARCH=arm64
+                  - generic [ref=f1e585]:
+                    - text: "--"
+                    - link "workspace_status_command" [ref=f1e586] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--workspace_status_command
+                    - text: =/tmp/spike-status.sh
+                  - generic [ref=f1e587]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e588] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =COMMIT_SHA=3275918
+                  - generic [ref=f1e589]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e590] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =REPO_URL=local-spike
+                  - generic [ref=f1e591]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e592] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =BRANCH_NAME=main
+                  - generic [ref=f1e593]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e594] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =TAGS=local
+                  - generic [ref=f1e595]:
+                    - text: "--"
+                    - link "build_metadata" [ref=f1e596] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_metadata
+                    - text: =VISIBILITY=PRIVATE
+                  - generic [ref=f1e597]:
+                    - text: "--"
+                    - link "build_event_publish_all_actions" [ref=f1e598] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--build_event_publish_all_actions
+                    - text: =1
+                  - generic [ref=f1e599]:
+                    - text: "--"
+                    - link "test_output" [ref=f1e600] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--test_output
+                    - text: =errors
+                  - generic [ref=f1e601]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e602] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =client
+                  - generic [ref=f1e603]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e604] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =/private/tmp/spike-scans/.bazelrc
+                  - generic [ref=f1e605]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e606] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =/private/tmp/spike-scans.bazelrc
+                  - generic [ref=f1e607]:
+                    - text: "--"
+                    - link "startup_time" [ref=f1e608] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--startup_time
+                    - text: =1298
+                  - generic [ref=f1e609]:
+                    - text: "--"
+                    - link "command_wait_time" [ref=f1e610] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--command_wait_time
+                    - text: =0
+                  - generic [ref=f1e611]:
+                    - text: "--"
+                    - link "restart_reason" [ref=f1e612] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--restart_reason
+                    - text: =no_daemon
+                  - generic [ref=f1e613]:
+                    - text: "--"
+                    - link "binary_path" [ref=f1e614] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--binary_path
+                    - text: =/Users/terenceschumacher/Library/Caches/bazelisk/downloads/sha256/f29ca3f3bf577eb1619aeeed401b64a10901c8da8031aaa4add54a4ad0e99e3a/bin/bazel
+                  - generic [ref=f1e615]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e616] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =COMMAND_MODE=<REDACTED>
+                  - generic [ref=f1e617]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e618] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_DEFAULT_ENV=<REDACTED>
+                  - generic [ref=f1e619]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e620] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_EXE=<REDACTED>
+                  - generic [ref=f1e621]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e622] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PREFIX=<REDACTED>
+                  - generic [ref=f1e623]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e624] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PROMPT_MODIFIER=<REDACTED>
+                  - generic [ref=f1e625]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e626] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PYTHON_EXE=<REDACTED>
+                  - generic [ref=f1e627]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e628] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_SHLVL=<REDACTED>
+                  - generic [ref=f1e629]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e630] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =EDITOR=<REDACTED>
+                  - generic [ref=f1e631]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e632] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =FPATH=<REDACTED>
+                  - generic [ref=f1e633]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e634] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOME=<REDACTED>
+                  - generic [ref=f1e635]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e636] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_CELLAR=<REDACTED>
+                  - generic [ref=f1e637]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e638] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_PREFIX=<REDACTED>
+                  - generic [ref=f1e639]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e640] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_REPOSITORY=<REDACTED>
+                  - generic [ref=f1e641]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e642] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =INFOPATH=<REDACTED>
+                  - generic [ref=f1e643]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e644] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =JAVA_HOME=<REDACTED>
+                  - generic [ref=f1e645]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e646] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LANG=<REDACTED>
+                  - generic [ref=f1e647]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e648] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LESS=<REDACTED>
+                  - generic [ref=f1e649]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e650] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LOGNAME=<REDACTED>
+                  - generic [ref=f1e651]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e652] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LSCOLORS=<REDACTED>
+                  - generic [ref=f1e653]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e654] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LS_COLORS=<REDACTED>
+                  - generic [ref=f1e655]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e656] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MACH_PORT_RENDEZVOUS_PEER_VALDATION=<REDACTED>
+                  - generic [ref=f1e657]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e658] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MANPATH=<REDACTED>
+                  - generic [ref=f1e659]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e660] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MallocNanoZone=<REDACTED>
+                  - generic [ref=f1e661]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e662] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NVM_CD_FLAGS=<REDACTED>
+                  - generic [ref=f1e663]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e664] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NVM_DIR=<REDACTED>
+                  - generic [ref=f1e665]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e666] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =OLDPWD=<REDACTED>
+                  - generic [ref=f1e667]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e668] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =OSLogRateLimit=<REDACTED>
+                  - generic [ref=f1e669]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e670] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PAGER=<REDACTED>
+                  - generic [ref=f1e671]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e672] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PATH=<REDACTED>
+                  - generic [ref=f1e673]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e674] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PNPM_HOME=<REDACTED>
+                  - generic [ref=f1e675]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e676] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PWD=<REDACTED>
+                  - generic [ref=f1e677]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e678] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PYENV_ROOT=<REDACTED>
+                  - generic [ref=f1e679]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e680] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PYENV_SHELL=<REDACTED>
+                  - generic [ref=f1e681]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e682] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_CANDIDATES_API=<REDACTED>
+                  - generic [ref=f1e683]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e684] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_CANDIDATES_DIR=<REDACTED>
+                  - generic [ref=f1e685]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e686] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_DIR=<REDACTED>
+                  - generic [ref=f1e687]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e688] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_PLATFORM=<REDACTED>
+                  - generic [ref=f1e689]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e690] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SHELL=<REDACTED>
+                  - generic [ref=f1e691]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e692] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SHLVL=<REDACTED>
+                  - generic [ref=f1e693]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e694] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SSH_AUTH_SOCK=<REDACTED>
+                  - generic [ref=f1e695]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e696] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =TMPDIR=<REDACTED>
+                  - generic [ref=f1e697]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e698] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =USER=terenceschumacher
+                  - generic [ref=f1e699]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e700] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VIRTUAL_ENV_DISABLE_PROMPT=<REDACTED>
+                  - generic [ref=f1e701]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e702] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CODE_CACHE_PATH=<REDACTED>
+                  - generic [ref=f1e703]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e704] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CRASH_REPORTER_PROCESS_TYPE=<REDACTED>
+                  - generic [ref=f1e705]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e706] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CWD=<REDACTED>
+                  - generic [ref=f1e707]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e708] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_ESM_ENTRYPOINT=<REDACTED>
+                  - generic [ref=f1e709]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e710] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_HANDLES_UNCAUGHT_ERRORS=<REDACTED>
+                  - generic [ref=f1e711]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e712] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_IPC_HOOK=<REDACTED>
+                  - generic [ref=f1e713]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e714] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_NLS_CONFIG=<REDACTED>
+                  - generic [ref=f1e715]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e716] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_NODE_COMPILE_CACHE_ROOT=<REDACTED>
+                  - generic [ref=f1e717]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e718] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_PID=<REDACTED>
+                  - generic [ref=f1e719]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e720] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XML_CATALOG_FILES=<REDACTED>
+                  - generic [ref=f1e721]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e722] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XPC_FLAGS=<REDACTED>
+                  - generic [ref=f1e723]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e724] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XPC_SERVICE_NAME=<REDACTED>
+                  - generic [ref=f1e725]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e726] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =ZSH=<REDACTED>
+                  - generic [ref=f1e727]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e728] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_CONDA_EXE=<REDACTED>
+                  - generic [ref=f1e729]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e730] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_CONDA_ROOT=<REDACTED>
+                  - generic [ref=f1e731]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e732] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =__CFBundleIdentifier=<REDACTED>
+                  - generic [ref=f1e733]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e734] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =__CF_USER_TEXT_ENCODING=<REDACTED>
+                  - generic [ref=f1e735]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e736] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =sdkman_auto_complete=<REDACTED>
+                  - generic [ref=f1e737]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e738] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =ELECTRON_RUN_AS_NODE=<REDACTED>
+                  - generic [ref=f1e739]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e740] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NoDefaultCurrentDirectoryInExePath=<REDACTED>
+                  - generic [ref=f1e741]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e742] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MCP_CONNECTION_NONBLOCKING=<REDACTED>
+                  - generic [ref=f1e743]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e744] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENABLE_TASKS=<REDACTED>
+                  - generic [ref=f1e745]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e746] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_EMIT_STARTUP_TIMING=<REDACTED>
+                  - generic [ref=f1e747]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e748] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENTRYPOINT=<REDACTED>
+                  - generic [ref=f1e749]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e750] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VIRTUAL_ENV=<REDACTED>
+                  - generic [ref=f1e751]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e752] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_AGENT_SDK_VERSION=<REDACTED>
+                  - generic [ref=f1e753]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e754] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING=<REDACTED>
+                  - generic [ref=f1e755]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e756] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_QUESTION_PREVIEW_FORMAT=<REDACTED>
+                  - generic [ref=f1e757]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e758] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =COREPACK_ENABLE_AUTO_PIN=<REDACTED>
+                  - generic [ref=f1e759]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e760] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =AI_AGENT=<REDACTED>
+                  - generic [ref=f1e761]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e762] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=<REDACTED>
+                  - generic [ref=f1e763]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e764] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CCGUI_CLI_LOGIN_AUTHORIZED=<REDACTED>
+                  - generic [ref=f1e765]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e766] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_MESSAGING_SOCKET=<REDACTED>
+                  - generic [ref=f1e767]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e768] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_MESSAGING_TOKEN=<REDACTED>
+                  - generic [ref=f1e769]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e770] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =GIT_EDITOR=<REDACTED>
+                  - generic [ref=f1e771]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e772] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_EXECPATH=<REDACTED>
+                  - generic [ref=f1e773]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e774] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDECODE=<REDACTED>
+                  - generic [ref=f1e775]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e776] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_SESSION_ID=<REDACTED>
+                  - generic [ref=f1e777]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e778] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_CHILD_SESSION=<REDACTED>
+                  - generic [ref=f1e779]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e780] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_SESSION_ATTENDED=<REDACTED>
+                  - generic [ref=f1e781]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e782] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_PID=<REDACTED>
+                  - generic [ref=f1e783]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e784] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_EFFORT=<REDACTED>
+                  - generic [ref=f1e785]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e786] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_=<REDACTED>
+                  - generic [ref=f1e787]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e788] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =BAZELISK_SKIP_WRAPPER=<REDACTED>
+                  - generic [ref=f1e789]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e790] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =DARWIN_USER_TEMP_DIR=<REDACTED>
+                  - generic [ref=f1e791]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e792] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =DARWIN_USER_CACHE_DIR=<REDACTED>
+                  - generic [ref=f1e793]:
+                    - text: "--"
+                    - link "client_cwd" [ref=f1e794] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_cwd
+                    - text: =/private/tmp/spike-scans
+                  - generic [ref=f1e795]:
+                    - text: "--"
+                    - link "jobs" [ref=f1e796] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--jobs
+                    - text: =4
+                  - generic [ref=f1e797]: "--@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py=true"
+              - generic [ref=f1e798]:
+                - generic [ref=f1e799]: residual
+                - generic [ref=f1e800]: //tools/build_defs/...
+            - generic [ref=f1e802]:
+              - generic [ref=f1e803]: original command line
+              - generic [ref=f1e804]:
+                - generic [ref=f1e805]: executable
+                - generic [ref=f1e806]: bazel
+              - generic [ref=f1e808]:
+                - generic [ref=f1e809]: startup options
+                - generic [ref=f1e810]:
+                  - generic [ref=f1e811]:
+                    - text: "--"
+                    - link "output_base" [ref=f1e812] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--output_base
+                    - text: =/tmp/spike-scans-ob2
+                  - generic [ref=f1e813]:
+                    - text: "--"
+                    - link "bazelrc" [ref=f1e814] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--bazelrc
+                    - text: =/tmp/spike-scans.bazelrc
+              - generic [ref=f1e815]:
+                - generic [ref=f1e816]: command
+                - generic [ref=f1e817]: test
+              - generic [ref=f1e819]:
+                - generic [ref=f1e820]: command options
+                - generic [ref=f1e821]:
+                  - generic [ref=f1e822]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e823] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =client
+                  - generic [ref=f1e824]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e825] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =/private/tmp/spike-scans/.bazelrc
+                  - generic [ref=f1e826]:
+                    - text: "--"
+                    - link "rc_source" [ref=f1e827] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--rc_source
+                    - text: =/private/tmp/spike-scans.bazelrc
+                  - generic [ref=f1e828]:
+                    - text: "--"
+                    - link "startup_time" [ref=f1e829] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--startup_time
+                    - text: =1298
+                  - generic [ref=f1e830]:
+                    - text: "--"
+                    - link "command_wait_time" [ref=f1e831] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--command_wait_time
+                    - text: =0
+                  - generic [ref=f1e832]:
+                    - text: "--"
+                    - link "restart_reason" [ref=f1e833] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--restart_reason
+                    - text: =no_daemon
+                  - generic [ref=f1e834]:
+                    - text: "--"
+                    - link "binary_path" [ref=f1e835] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--binary_path
+                    - text: =/Users/terenceschumacher/Library/Caches/bazelisk/downloads/sha256/f29ca3f3bf577eb1619aeeed401b64a10901c8da8031aaa4add54a4ad0e99e3a/bin/bazel
+                  - generic [ref=f1e836]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e837] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =COMMAND_MODE=<REDACTED>
+                  - generic [ref=f1e838]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e839] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_DEFAULT_ENV=<REDACTED>
+                  - generic [ref=f1e840]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e841] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_EXE=<REDACTED>
+                  - generic [ref=f1e842]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e843] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PREFIX=<REDACTED>
+                  - generic [ref=f1e844]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e845] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PROMPT_MODIFIER=<REDACTED>
+                  - generic [ref=f1e846]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e847] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_PYTHON_EXE=<REDACTED>
+                  - generic [ref=f1e848]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e849] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CONDA_SHLVL=<REDACTED>
+                  - generic [ref=f1e850]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e851] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =EDITOR=<REDACTED>
+                  - generic [ref=f1e852]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e853] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =FPATH=<REDACTED>
+                  - generic [ref=f1e854]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e855] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOME=<REDACTED>
+                  - generic [ref=f1e856]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e857] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_CELLAR=<REDACTED>
+                  - generic [ref=f1e858]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e859] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_PREFIX=<REDACTED>
+                  - generic [ref=f1e860]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e861] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =HOMEBREW_REPOSITORY=<REDACTED>
+                  - generic [ref=f1e862]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e863] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =INFOPATH=<REDACTED>
+                  - generic [ref=f1e864]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e865] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =JAVA_HOME=<REDACTED>
+                  - generic [ref=f1e866]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e867] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LANG=<REDACTED>
+                  - generic [ref=f1e868]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e869] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LESS=<REDACTED>
+                  - generic [ref=f1e870]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e871] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LOGNAME=<REDACTED>
+                  - generic [ref=f1e872]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e873] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LSCOLORS=<REDACTED>
+                  - generic [ref=f1e874]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e875] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =LS_COLORS=<REDACTED>
+                  - generic [ref=f1e876]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e877] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MACH_PORT_RENDEZVOUS_PEER_VALDATION=<REDACTED>
+                  - generic [ref=f1e878]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e879] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MANPATH=<REDACTED>
+                  - generic [ref=f1e880]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e881] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MallocNanoZone=<REDACTED>
+                  - generic [ref=f1e882]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e883] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NVM_CD_FLAGS=<REDACTED>
+                  - generic [ref=f1e884]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e885] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NVM_DIR=<REDACTED>
+                  - generic [ref=f1e886]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e887] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =OLDPWD=<REDACTED>
+                  - generic [ref=f1e888]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e889] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =OSLogRateLimit=<REDACTED>
+                  - generic [ref=f1e890]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e891] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PAGER=<REDACTED>
+                  - generic [ref=f1e892]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e893] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PATH=<REDACTED>
+                  - generic [ref=f1e894]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e895] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PNPM_HOME=<REDACTED>
+                  - generic [ref=f1e896]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e897] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PWD=<REDACTED>
+                  - generic [ref=f1e898]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e899] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PYENV_ROOT=<REDACTED>
+                  - generic [ref=f1e900]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e901] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =PYENV_SHELL=<REDACTED>
+                  - generic [ref=f1e902]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e903] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_CANDIDATES_API=<REDACTED>
+                  - generic [ref=f1e904]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e905] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_CANDIDATES_DIR=<REDACTED>
+                  - generic [ref=f1e906]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e907] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_DIR=<REDACTED>
+                  - generic [ref=f1e908]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e909] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SDKMAN_PLATFORM=<REDACTED>
+                  - generic [ref=f1e910]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e911] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SHELL=<REDACTED>
+                  - generic [ref=f1e912]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e913] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SHLVL=<REDACTED>
+                  - generic [ref=f1e914]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e915] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =SSH_AUTH_SOCK=<REDACTED>
+                  - generic [ref=f1e916]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e917] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =TMPDIR=<REDACTED>
+                  - generic [ref=f1e918]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e919] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =USER=terenceschumacher
+                  - generic [ref=f1e920]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e921] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VIRTUAL_ENV_DISABLE_PROMPT=<REDACTED>
+                  - generic [ref=f1e922]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e923] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CODE_CACHE_PATH=<REDACTED>
+                  - generic [ref=f1e924]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e925] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CRASH_REPORTER_PROCESS_TYPE=<REDACTED>
+                  - generic [ref=f1e926]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e927] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_CWD=<REDACTED>
+                  - generic [ref=f1e928]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e929] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_ESM_ENTRYPOINT=<REDACTED>
+                  - generic [ref=f1e930]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e931] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_HANDLES_UNCAUGHT_ERRORS=<REDACTED>
+                  - generic [ref=f1e932]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e933] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_IPC_HOOK=<REDACTED>
+                  - generic [ref=f1e934]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e935] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_NLS_CONFIG=<REDACTED>
+                  - generic [ref=f1e936]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e937] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_NODE_COMPILE_CACHE_ROOT=<REDACTED>
+                  - generic [ref=f1e938]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e939] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VSCODE_PID=<REDACTED>
+                  - generic [ref=f1e940]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e941] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XML_CATALOG_FILES=<REDACTED>
+                  - generic [ref=f1e942]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e943] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XPC_FLAGS=<REDACTED>
+                  - generic [ref=f1e944]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e945] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =XPC_SERVICE_NAME=<REDACTED>
+                  - generic [ref=f1e946]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e947] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =ZSH=<REDACTED>
+                  - generic [ref=f1e948]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e949] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_CONDA_EXE=<REDACTED>
+                  - generic [ref=f1e950]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e951] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_CONDA_ROOT=<REDACTED>
+                  - generic [ref=f1e952]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e953] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =__CFBundleIdentifier=<REDACTED>
+                  - generic [ref=f1e954]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e955] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =__CF_USER_TEXT_ENCODING=<REDACTED>
+                  - generic [ref=f1e956]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e957] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =sdkman_auto_complete=<REDACTED>
+                  - generic [ref=f1e958]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e959] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =ELECTRON_RUN_AS_NODE=<REDACTED>
+                  - generic [ref=f1e960]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e961] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =NoDefaultCurrentDirectoryInExePath=<REDACTED>
+                  - generic [ref=f1e962]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e963] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =MCP_CONNECTION_NONBLOCKING=<REDACTED>
+                  - generic [ref=f1e964]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e965] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENABLE_TASKS=<REDACTED>
+                  - generic [ref=f1e966]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e967] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_EMIT_STARTUP_TIMING=<REDACTED>
+                  - generic [ref=f1e968]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e969] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENTRYPOINT=<REDACTED>
+                  - generic [ref=f1e970]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e971] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =VIRTUAL_ENV=<REDACTED>
+                  - generic [ref=f1e972]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e973] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_AGENT_SDK_VERSION=<REDACTED>
+                  - generic [ref=f1e974]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e975] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING=<REDACTED>
+                  - generic [ref=f1e976]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e977] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_QUESTION_PREVIEW_FORMAT=<REDACTED>
+                  - generic [ref=f1e978]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e979] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =COREPACK_ENABLE_AUTO_PIN=<REDACTED>
+                  - generic [ref=f1e980]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e981] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =AI_AGENT=<REDACTED>
+                  - generic [ref=f1e982]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e983] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=<REDACTED>
+                  - generic [ref=f1e984]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e985] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CCGUI_CLI_LOGIN_AUTHORIZED=<REDACTED>
+                  - generic [ref=f1e986]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e987] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_MESSAGING_SOCKET=<REDACTED>
+                  - generic [ref=f1e988]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e989] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_MESSAGING_TOKEN=<REDACTED>
+                  - generic [ref=f1e990]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e991] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =GIT_EDITOR=<REDACTED>
+                  - generic [ref=f1e992]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e993] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_EXECPATH=<REDACTED>
+                  - generic [ref=f1e994]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e995] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDECODE=<REDACTED>
+                  - generic [ref=f1e996]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e997] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_SESSION_ID=<REDACTED>
+                  - generic [ref=f1e998]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e999] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_CHILD_SESSION=<REDACTED>
+                  - generic [ref=f1e1000]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1001] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_CODE_SESSION_ATTENDED=<REDACTED>
+                  - generic [ref=f1e1002]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1003] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_PID=<REDACTED>
+                  - generic [ref=f1e1004]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1005] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =CLAUDE_EFFORT=<REDACTED>
+                  - generic [ref=f1e1006]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1007] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =_=<REDACTED>
+                  - generic [ref=f1e1008]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1009] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =BAZELISK_SKIP_WRAPPER=<REDACTED>
+                  - generic [ref=f1e1010]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1011] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =DARWIN_USER_TEMP_DIR=<REDACTED>
+                  - generic [ref=f1e1012]:
+                    - text: "--"
+                    - link "client_env" [ref=f1e1013] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_env
+                    - text: =DARWIN_USER_CACHE_DIR=<REDACTED>
+                  - generic [ref=f1e1014]:
+                    - text: "--"
+                    - link "client_cwd" [ref=f1e1015] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--client_cwd
+                    - text: =/private/tmp/spike-scans
+                  - generic [ref=f1e1016]:
+                    - text: "--"
+                    - link "jobs" [ref=f1e1017] [cursor=pointer]:
+                      - /url: https://bazel.build/reference/command-line-reference#flag--jobs
+                    - text: =4
+              - generic [ref=f1e1018]:
+                - generic [ref=f1e1019]: residual
+                - generic [ref=f1e1020]: //tools/build_defs/...
+        - generic [ref=f1e1026]:
+          - generic [ref=f1e1027]: Cache stats
+          - generic [ref=f1e1029]:
+            - generic [ref=f1e1030]:
+              - generic [ref=f1e1031]: Action cache (AC)
+              - generic [ref=f1e1032]: Maps action hashes to action result metadata
+              - generic [ref=f1e1044]:
+                - generic [ref=f1e1045]:
+                  - generic [ref=f1e1047]: 4,978
+                  - text: hits
+                - generic [ref=f1e1048]:
+                  - generic [ref=f1e1050]: "0"
+                  - text: misses
+            - generic [ref=f1e1051]:
+              - generic [ref=f1e1052]: Content addressable store (CAS)
+              - generic [ref=f1e1053]: Stores files (including logs & profiling info)
+              - generic [ref=f1e1068]:
+                - generic [ref=f1e1069]:
+                  - generic [ref=f1e1071]: 3,755
+                  - text: hits
+                - generic [ref=f1e1072]:
+                  - generic [ref=f1e1074]: "1"
+                  - text: writes
+            - generic [ref=f1e1075]:
+              - generic [ref=f1e1076]: Volume
+              - generic [ref=f1e1077]: Total size of files uploaded & downloaded from both caches
+              - generic [ref=f1e1092]:
+                - generic [ref=f1e1093]: 1.069GB downloaded
+                - generic [ref=f1e1097]: 144.4KB uploaded
+            - generic [ref=f1e1101]:
+              - generic [ref=f1e1102]: Throughput
+              - generic [ref=f1e1103]: Upload / download speed (time-weighted avg)
+              - generic [ref=f1e1118]:
+                - generic [ref=f1e1119]:
+                  - generic [ref=f1e1121]: "369.87"
+                  - text: Mbps download
+                - generic [ref=f1e1122]:
+                  - generic [ref=f1e1124]: "127.90"
+                  - text: Mbps upload
+            - generic [ref=f1e1127]:
+              - generic [ref=f1e1128]: Local invalidation reasons
+              - generic [ref=f1e1129]: Reasons for missing Bazel's local action cache
+              - generic [ref=f1e1142]:
+                - generic [ref=f1e1145]:
+                  - generic [ref=f1e1146]: 8,200
+                  - generic "Not cached (100%)" [ref=f1e1147]
+                - generic [ref=f1e1150]:
+                  - generic [ref=f1e1151]: "25"
+                  - generic "Unconditional execution (0%)" [ref=f1e1152]
+            - generic [ref=f1e1155]:
+              - generic [ref=f1e1156]: Action types
+              - generic [ref=f1e1157]: Number of actions with each action mnemonic
+              - generic [ref=f1e1182]:
+                - generic [ref=f1e1185]:
+                  - generic [ref=f1e1186]: 3,015
+                  - generic "CppCompile (37%)" [ref=f1e1187]
+                - generic [ref=f1e1190]:
+                  - generic [ref=f1e1191]: 1,756
+                  - generic "CppModuleMap (22%)" [ref=f1e1192]
+                - generic [ref=f1e1195]:
+                  - generic [ref=f1e1196]: 1,229
+                  - generic "Symlink (15%)" [ref=f1e1197]
+                - generic [ref=f1e1200]:
+                  - generic [ref=f1e1201]: 1,183
+                  - generic "CppArchive (15%)" [ref=f1e1202]
+                - generic [ref=f1e1205]:
+                  - generic [ref=f1e1206]: "287"
+                  - generic "GenProto (4%)" [ref=f1e1207]
+                - generic [ref=f1e1210]:
+                  - generic [ref=f1e1211]: "644"
+                  - generic "179 GoCompilePkg (2%), 48 RunfilesTree (1%), 48 RepoMappingManifest (1%), 48 SymlinkTree (1%), 48 SourceSymlinkManifest (1%), 46 FileWrite (1%), 34 Genrule (0%), 32 Javac (0%), 28 TemplateExpand (0%), 26 StampJarManifest (0%), 26 CreateCompileJar (0%), 24 TestRunner (0%), 20 Turbine (0%), 19 CppLink (0%), 18 GenProtoDescriptorSet (0%)" [ref=f1e1212]: Other (8%)
+            - generic [ref=f1e1215]:
+              - generic [ref=f1e1216]: Runner types
+              - generic [ref=f1e1217]: Number of actions with each runner type
+              - generic [ref=f1e1230]:
+                - generic [ref=f1e1233]:
+                  - generic [ref=f1e1234]: 4,978
+                  - generic "remote cache hit (60%)" [ref=f1e1235]
+                - generic [ref=f1e1238]:
+                  - generic [ref=f1e1239]: 3,268
+                  - generic "internal (40%)" [ref=f1e1240]
+        - generic [ref=f1e1246]:
+          - generic [ref=f1e1247]: Cache Misses
+          - text: No Misses
+        - generic [ref=f1e1253]:
+          - generic [ref=f1e1254]:
+            - text: 97 targets with artifacts
+            - img [aria-hidden] [ref=f1e1255] [cursor=pointer]
+          - generic [ref=f1e1258]:
+            - generic [ref=f1e1259]:
+              - generic [ref=f1e1260]: //tools/build_defs/legacy/sample:legacy_lib
+              - generic [ref=f1e1262]:
+                - link "tools/build_defs/legacy/sample/liblegacy_lib.a" [ref=f1e1263] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315%2F728&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Fliblegacy_lib.a&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1264] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315%2F728&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Fliblegacy_lib.a
+                - generic [ref=f1e1270]:
+                  - generic "1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315" [ref=f1e1271]
+                  - generic "728" [ref=f1e1272]: 728B
+            - generic [ref=f1e1273]:
+              - generic [ref=f1e1274]: //tools/build_defs/legacy/sample:legacy_lib_hdrs
+              - generic [ref=f1e1276]:
+                - link "tools/build_defs/legacy/sample/lib.h" [ref=f1e1277] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2Ffde0dc3646949b798bb234a8d8312dad2b1575714c17d2149d5d1c4cfb32e27f%2F35&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Flib.h&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1278] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2Ffde0dc3646949b798bb234a8d8312dad2b1575714c17d2149d5d1c4cfb32e27f%2F35&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Flib.h
+                - generic [ref=f1e1284]:
+                  - generic "fde0dc3646949b798bb234a8d8312dad2b1575714c17d2149d5d1c4cfb32e27f" [ref=f1e1285]
+                  - generic "35" [ref=f1e1286]: 35B
+            - generic [ref=f1e1287]:
+              - generic [ref=f1e1288]: //tools/build_defs/legacy/sample:modern_lib
+              - generic [ref=f1e1290]:
+                - link "tools/build_defs/legacy/sample/libmodern_lib.a" [ref=f1e1291] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315%2F728&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Flibmodern_lib.a&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1292] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315%2F728&filename=tools%2Fbuild_defs%2Flegacy%2Fsample%2Flibmodern_lib.a
+                - generic [ref=f1e1298]:
+                  - generic "1f06ab18ef4c047d9c52fa95be932c2139d9d9f5a949db6741faa214c0871315" [ref=f1e1299]
+                  - generic "728" [ref=f1e1300]: 728B
+            - generic [ref=f1e1301]:
+              - generic [ref=f1e1302]: //tools/build_defs/packaging:make_tarball
+              - generic [ref=f1e1303]:
+                - generic [ref=f1e1304]:
+                  - link "tools/build_defs/packaging/make_tarball" [ref=f1e1305] [cursor=pointer]:
+                    - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F71a8a921bbcc956dc571853384f4982da2dd60d49b89322022b3b14e47b0b6ad%2F27538&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                  - link "View" [ref=f1e1306] [cursor=pointer]:
+                    - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F71a8a921bbcc956dc571853384f4982da2dd60d49b89322022b3b14e47b0b6ad%2F27538&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball
+                  - generic [ref=f1e1312]:
+                    - generic "71a8a921bbcc956dc571853384f4982da2dd60d49b89322022b3b14e47b0b6ad" [ref=f1e1313]
+                    - generic "27538" [ref=f1e1314]: 27.54KB
+                - generic [ref=f1e1315]:
+                  - link "tools/build_defs/packaging/make_tarball.py" [ref=f1e1316] [cursor=pointer]:
+                    - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F18ffc39afd140aa5baea8b0f253b314f59d5b3cd4ac751c99b09318b85b61a83%2F3348&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball.py&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                  - link "View" [ref=f1e1317] [cursor=pointer]:
+                    - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F18ffc39afd140aa5baea8b0f253b314f59d5b3cd4ac751c99b09318b85b61a83%2F3348&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball.py
+                  - generic [ref=f1e1323]:
+                    - generic "18ffc39afd140aa5baea8b0f253b314f59d5b3cd4ac751c99b09318b85b61a83" [ref=f1e1324]
+                    - generic "3348" [ref=f1e1325]: 3.348KB
+            - generic [ref=f1e1326]:
+              - generic [ref=f1e1327]: //tools/build_defs/packaging:make_tarball_test
+              - generic [ref=f1e1328]:
+                - generic [ref=f1e1329]:
+                  - link "tools/build_defs/packaging/make_tarball_test" [ref=f1e1330] [cursor=pointer]:
+                    - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02%2F1366&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball_test&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                  - link "View" [ref=f1e1331] [cursor=pointer]:
+                    - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02%2F1366&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball_test
+                  - generic [ref=f1e1337]:
+                    - generic "297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02" [ref=f1e1338]
+                    - generic "1366" [ref=f1e1339]: 1.366KB
+                - generic [ref=f1e1340]:
+                  - link "tools/build_defs/packaging/make_tarball_test.sh" [ref=f1e1341] [cursor=pointer]:
+                    - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02%2F1366&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                  - link "View" [ref=f1e1342] [cursor=pointer]:
+                    - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02%2F1366&filename=tools%2Fbuild_defs%2Fpackaging%2Fmake_tarball_test.sh
+                  - generic [ref=f1e1348]:
+                    - generic "297d909e6dd3cacc53a7d2240fc5e486223c72b6e4de6f13162e905cb7e10c02" [ref=f1e1349]
+                    - generic "1366" [ref=f1e1350]: 1.366KB
+            - generic [ref=f1e1351]:
+              - generic [ref=f1e1352]: //tools/build_defs/tests/analysis:cc_library_warnings_test
+              - generic [ref=f1e1354]:
+                - link "tools/build_defs/tests/analysis/cc_library_warnings_test.sh" [ref=f1e1355] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fcc_library_warnings_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1356] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fcc_library_warnings_test.sh
+                - generic [ref=f1e1362]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1363]
+                  - generic "22" [ref=f1e1364]: 22B
+            - generic [ref=f1e1365]:
+              - generic [ref=f1e1366]: //tools/build_defs/tests/analysis:cc_test_gtest_and_defaults_test
+              - generic [ref=f1e1368]:
+                - link "tools/build_defs/tests/analysis/cc_test_gtest_and_defaults_test.sh" [ref=f1e1369] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fcc_test_gtest_and_defaults_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1370] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fcc_test_gtest_and_defaults_test.sh
+                - generic [ref=f1e1376]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1377]
+                  - generic "22" [ref=f1e1378]: 22B
+            - generic [ref=f1e1379]:
+              - generic [ref=f1e1380]: //tools/build_defs/tests/analysis:go_library_team_tag_test
+              - generic [ref=f1e1382]:
+                - link "tools/build_defs/tests/analysis/go_library_team_tag_test.sh" [ref=f1e1383] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgo_library_team_tag_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1384] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgo_library_team_tag_test.sh
+                - generic [ref=f1e1390]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1391]
+                  - generic "22" [ref=f1e1392]: 22B
+            - generic [ref=f1e1393]:
+              - generic [ref=f1e1394]: //tools/build_defs/tests/analysis:go_test_team_tag_and_size_test
+              - generic [ref=f1e1396]:
+                - link "tools/build_defs/tests/analysis/go_test_team_tag_and_size_test.sh" [ref=f1e1397] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgo_test_team_tag_and_size_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1398] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgo_test_team_tag_and_size_test.sh
+                - generic [ref=f1e1404]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1405]
+                  - generic "22" [ref=f1e1406]: 22B
+            - generic [ref=f1e1407]:
+              - generic [ref=f1e1408]: //tools/build_defs/tests/analysis:grpc_cc_binary_test
+              - generic [ref=f1e1410]:
+                - link "tools/build_defs/tests/analysis/grpc_cc_binary_test.sh" [ref=f1e1411] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_cc_binary_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1412] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_cc_binary_test.sh
+                - generic [ref=f1e1418]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1419]
+                  - generic "22" [ref=f1e1420]: 22B
+            - generic [ref=f1e1421]:
+              - generic [ref=f1e1422]: //tools/build_defs/tests/analysis:grpc_cc_lib_test
+              - generic [ref=f1e1424]:
+                - link "tools/build_defs/tests/analysis/grpc_cc_lib_test.sh" [ref=f1e1425] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_cc_lib_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1426] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_cc_lib_test.sh
+                - generic [ref=f1e1432]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1433]
+                  - generic "22" [ref=f1e1434]: 22B
+            - generic [ref=f1e1435]:
+              - generic [ref=f1e1436]: //tools/build_defs/tests/analysis:grpc_kt_binary_test
+              - generic [ref=f1e1438]:
+                - link "tools/build_defs/tests/analysis/grpc_kt_binary_test.sh" [ref=f1e1439] [cursor=pointer]:
+                  - /url: /file/download?bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_kt_binary_test.sh&request_context=GKQDKhNBbWVyaWNhL0xvc19BbmdlbGVzMig5MjdiYjUyZWYzNWM2OTg0MDBiMDkwYjk0MjQ2N2ExZTAyY2ZjMTVl
+                - link "View" [ref=f1e1440] [cursor=pointer]:
+                  - /url: /code/buildbuddy-io/buildbuddy/?invocation_id=d9e1ffb1-dda9-42fd-b182-ae93e674619c&bytestream_url=bytestream%3A%2F%2Flocalhost%3A1985%2Fblobs%2F21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6%2F22&filename=tools%2Fbuild_defs%2Ftests%2Fanalysis%2Fgrpc_kt_binary_test.sh
+                - generic [ref=f1e1446]:
+                  - generic "21e8b46e0fbffe8800c0f1ded5c1ba813048bde663c303150fd8a9840271e3b6" [ref=f1e1447]
+                  - generic "22" [ref=f1e1448]: 22B
+          - generic [ref=f1e1449]:
+            - generic [ref=f1e1450] [cursor=pointer]: Load more targets with artifacts
+            - generic [ref=f1e1453] [cursor=pointer]: Load all targets with artifacts
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: © 2026 Iteration, Inc.
+      - link "Terms" [ref=f1e17] [cursor=pointer]:
+        - /url: https://buildbuddy.io/terms
+      - link "Privacy" [ref=f1e18] [cursor=pointer]:
+        - /url: https://buildbuddy.io/privacy
+      - link "BuildBuddy" [ref=f1e19] [cursor=pointer]:
+        - /url: https://buildbuddy.io
+      - link "v2.314.0" [ref=f1e20] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/releases/tag/v2.314.0
+      - link "Contact us" [ref=f1e21] [cursor=pointer]:
+        - /url: mailto:hello@buildbuddy.io
+      - link "Slack" [ref=f1e22] [cursor=pointer]:
+        - /url: https://community.buildbuddy.io
+      - link "Twitter" [ref=f1e23] [cursor=pointer]:
+        - /url: https://twitter.com/buildbuddy
+      - link "GitHub" [ref=f1e24] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/

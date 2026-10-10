@@ -1,0 +1,171 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - link [ref=e8] [cursor=pointer]:
+      - /url: /
+    - img [aria-hidden] [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - generic [ref=e14]:
+      - generic [ref=e25]:
+        - banner [ref=e26]:
+          - heading "Comparing invocations" [level=2] [ref=e27]
+          - generic [ref=e28]:
+            - button "Run bb explain" [ref=e29] [cursor=pointer]
+            - button [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]:
+                - generic [ref=e37]: Show changes only
+                - checkbox "Show changes only" [ref=e38]
+        - generic [ref=e40]:
+          - link "Details" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+          - link "Flags" [ref=e42] [cursor=pointer]:
+            - /url: "#flag"
+          - link "Files" [ref=e43] [cursor=pointer]:
+            - /url: "#file"
+          - link "Spawns" [ref=e44] [cursor=pointer]:
+            - /url: "#spawn"
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: Invocation ID
+          - link "adb79eed-5784-4b40-8fb1-1b88cc68d064" [ref=e49] [cursor=pointer]:
+            - /url: /invocation/adb79eed-5784-4b40-8fb1-1b88cc68d064
+          - link "d9e1ffb1-dda9-42fd-b182-ae93e674619c" [ref=e51] [cursor=pointer]:
+            - /url: /invocation/d9e1ffb1-dda9-42fd-b182-ae93e674619c
+        - generic [ref=e52]:
+          - generic [ref=e53]: Command
+          - generic [ref=e54]: test
+          - generic [ref=e55]: test
+        - generic [ref=e56]:
+          - generic [ref=e57]: Pattern
+          - generic [ref=e58]: //tools/build_defs/...
+          - generic [ref=e59]: //tools/build_defs/...
+        - generic [ref=e60]:
+          - generic [ref=e61]: Exit code
+          - generic [ref=e62]: success
+          - generic [ref=e63]: success
+        - generic [ref=e64]:
+          - generic [ref=e65]: Start date
+          - generic [ref=e66]: October 9th, 2026 at 4:53:03 pm
+          - generic [ref=e67]: October 9th, 2026 at 5:24:19 pm
+        - generic [ref=e68]:
+          - generic [ref=e69]: Duration
+          - generic [ref=e70]: 22m 30s
+          - generic [ref=e71]: 26.3s
+        - generic [ref=e72]:
+          - generic [ref=e73]: Host
+          - generic [ref=e74]: Terences-MacBook-Pro-2.local
+          - generic [ref=e75]: Terences-MacBook-Pro-2.local
+        - generic [ref=e76]:
+          - generic [ref=e77]: Tool
+          - generic [ref=e78]: bazel v9.3.0 test
+          - generic [ref=e79]: bazel v9.3.0 test
+        - generic [ref=e80]:
+          - generic [ref=e81]: Mode
+          - generic [ref=e82]: fastbuild
+          - generic [ref=e83]: fastbuild
+        - generic [ref=e84]:
+          - generic [ref=e85]: CPU
+          - generic [ref=e86]: aarch64
+          - generic [ref=e87]: aarch64
+        - generic [ref=e88]:
+          - generic [ref=e89]: Cache
+          - generic [ref=e90]: Cache on
+          - generic [ref=e91]: Cache on
+        - generic [ref=e92]:
+          - generic [ref=e93]: Remote execution
+          - generic [ref=e94]: Remote execution off
+          - generic [ref=e95]: Remote execution off
+        - generic [ref=e96]:
+          - generic [ref=e97]: Compression
+          - generic [ref=e98]: Disabled
+          - generic [ref=e99]: Disabled
+        - generic [ref=e100]:
+          - generic [ref=e101]: Pull request
+          - generic [ref=e102]: undefined
+          - generic [ref=e103]: undefined
+        - generic [ref=e104]:
+          - generic [ref=e105]: Instance name
+          - generic [ref=e106]: <default>
+          - generic [ref=e107]: <default>
+        - generic [ref=e108]:
+          - generic [ref=e109]: Repo URL
+          - generic [ref=e111]: https://local-spike
+        - generic [ref=e112]:
+          - generic [ref=e113]: Commit SHA
+          - generic [ref=e115]: "3275918"
+        - generic [ref=e116]:
+          - generic [ref=e117]: Branch
+          - generic [ref=e119]: main
+        - generic [ref=e120]:
+          - generic [ref=e121]: Role
+          - generic [ref=e122]: spike
+          - generic [ref=e123]: spike
+        - generic [ref=e124]:
+          - generic [ref=e125]: Status
+          - generic [ref=e126]: Succeeded
+          - generic [ref=e127]: Succeeded
+        - generic [ref=e128]:
+          - generic [ref=e129]: Fetch count
+          - generic [ref=e130]: "0"
+          - generic [ref=e131]: "0"
+        - generic [ref=e132]:
+          - generic [ref=e133]: Explicit command line
+          - generic [ref=e134]: "--jobs=4"
+          - generic [ref=e135]: "--jobs=4"
+        - generic [ref=e136]:
+          - generic [ref=e137]: Full command line
+          - generic [ref=e138]: "--flag_alias=build_python_zip=@@rules_python+//python/config_settings:build_python_zip --flag_alias=incompatible_default_to_explicit_init_py=@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py --flag_alias=python_path=@@rules_python+//python/config_settings:python_path --flag_alias=experimental_python_import_all_repositories=@@rules_python+//python/config_settings:experimental_python_import_all_repositories --enable_platform_specific_config --cxxopt=-std=c++20 --host_cxxopt=-std=c++20 --java_language_version=17 --tool_java_language_version=17 --java_runtime_version=remotejdk_17 --tool_java_runtime_version=remotejdk_17 --bes_backend=grpc://localhost:1985 --bes_results_url=http://localhost:8080/invocation/ --bes_upload_mode=fully_async --bes_timeout=10s --remote_cache=grpc://localhost:1985 --remote_upload_local_results --remote_timeout=10s --remote_local_fallback --build_metadata=ROLE=spike --build_metadata=HOST_ARCH=arm64 --test_output=errors --jobs=4 --@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py=true"
+          - generic [ref=e139]: "--flag_alias=build_python_zip=@@rules_python+//python/config_settings:build_python_zip --flag_alias=incompatible_default_to_explicit_init_py=@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py --flag_alias=python_path=@@rules_python+//python/config_settings:python_path --flag_alias=experimental_python_import_all_repositories=@@rules_python+//python/config_settings:experimental_python_import_all_repositories --enable_platform_specific_config --cxxopt=-std=c++20 --host_cxxopt=-std=c++20 --java_language_version=17 --tool_java_language_version=17 --java_runtime_version=remotejdk_17 --tool_java_runtime_version=remotejdk_17 --bes_backend=grpc://localhost:1985 --bes_results_url=http://localhost:8080/invocation/ --bes_upload_mode=fully_async --bes_timeout=10s --remote_cache=grpc://localhost:1985 --remote_upload_local_results --remote_timeout=10s --remote_local_fallback --build_metadata=ROLE=spike --build_metadata=HOST_ARCH=arm64 --workspace_status_command=/tmp/spike-status.sh --build_metadata=COMMIT_SHA=3275918 --build_metadata=REPO_URL=local-spike --build_metadata=BRANCH_NAME=main --build_metadata=TAGS=local --build_metadata=VISIBILITY=PRIVATE --build_event_publish_all_actions --test_output=errors --jobs=4 --@@rules_python+//python/config_settings:incompatible_default_to_explicit_init_py=true"
+        - generic [ref=e140]:
+          - generic [ref=e141]: Explicit startup options
+          - generic [ref=e142]: "--output_base=/tmp/spike-scans-ob --bazelrc=/tmp/spike-scans.bazelrc"
+          - generic [ref=e143]: "--output_base=/tmp/spike-scans-ob2 --bazelrc=/tmp/spike-scans.bazelrc"
+        - generic [ref=e144]:
+          - generic [ref=e145]: Full startup options
+          - generic [ref=e146]: "--max_idle_secs=10800 --noshutdown_on_low_sys_mem --connect_timeout_secs=30 --output_user_root=/Users/terenceschumacher/Library/Caches/bazel/_bazel_terenceschumacher --output_base=/private/tmp/spike-scans-ob --failure_detail_out=/tmp/spike-scans-ob/failure_detail.rawproto --idle_server_tasks --write_command_log --nofatal_event_bus_exceptions --nowindows_enable_symlinks --client_debug=false --ignore_all_rc_files"
+          - generic [ref=e147]: "--max_idle_secs=10800 --noshutdown_on_low_sys_mem --connect_timeout_secs=30 --output_user_root=/Users/terenceschumacher/Library/Caches/bazel/_bazel_terenceschumacher --output_base=/private/tmp/spike-scans-ob2 --failure_detail_out=/tmp/spike-scans-ob2/failure_detail.rawproto --idle_server_tasks --write_command_log --nofatal_event_bus_exceptions --nowindows_enable_symlinks --client_debug=false --ignore_all_rc_files"
+        - generic [ref=e148]:
+          - generic [ref=e149]: Attempt count
+          - generic [ref=e150]: "1"
+          - generic [ref=e151]: "1"
+        - generic [ref=e152]:
+          - generic [ref=e153]: Target count
+          - generic [ref=e154]: "109"
+          - generic [ref=e155]: "109"
+        - generic [ref=e156]:
+          - generic [ref=e157]: Success count
+          - generic [ref=e158]: "109"
+          - generic [ref=e159]: "109"
+        - generic [ref=e160]:
+          - generic [ref=e161]: Build failure count
+          - generic [ref=e162]: "0"
+          - generic [ref=e163]: "0"
+        - generic [ref=e164]:
+          - generic [ref=e165]: Failure count
+          - generic [ref=e166]: "0"
+          - generic [ref=e167]: "0"
+        - generic [ref=e168]:
+          - generic [ref=e169]: Flaky count
+          - generic [ref=e170]: "0"
+          - generic [ref=e171]: "0"
+        - generic [ref=e172]:
+          - generic [ref=e173]: Cache writes
+          - generic [ref=e174]: Allowed
+          - generic [ref=e175]: Allowed
+    - generic [ref=e15]:
+      - generic [ref=e16]: © 2026 Iteration, Inc.
+      - link "Terms" [ref=e17] [cursor=pointer]:
+        - /url: https://buildbuddy.io/terms
+      - link "Privacy" [ref=e18] [cursor=pointer]:
+        - /url: https://buildbuddy.io/privacy
+      - link "BuildBuddy" [ref=e19] [cursor=pointer]:
+        - /url: https://buildbuddy.io
+      - link "v2.314.0" [ref=e20] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/releases/tag/v2.314.0
+      - link "Contact us" [ref=e21] [cursor=pointer]:
+        - /url: mailto:hello@buildbuddy.io
+      - link "Slack" [ref=e22] [cursor=pointer]:
+        - /url: https://community.buildbuddy.io
+      - link "Twitter" [ref=e23] [cursor=pointer]:
+        - /url: https://twitter.com/buildbuddy
+      - link "GitHub" [ref=e24] [cursor=pointer]:
+        - /url: https://github.com/buildbuddy-io/buildbuddy/
